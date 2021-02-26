@@ -1,0 +1,29 @@
+/* These are my styles */
+
+body {
+	text-align: center;
+	line-height: 25px;
+	background-image: url(https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/love-at-first-sight-tom-mc-nemar.jpg);
+}
+
+header {
+	color: #a00421;
+	line-height: 50px;
+	margin-top: 50px;
+	margin-bottom: 110px;
+	font-family: "Sofia", cursive;
+}
+
+h1 {
+	font-size: 50px;
+}
+
+.loveCalculator {
+	margin-bottom: 50px;
+	font-weight: bolder;
+}
+
+.lookNice {
+	color: #50000f;
+	font-family: "Sofia";
+}

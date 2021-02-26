@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- link to my CSS code -->
+		<link rel="styleSheet" href="styles.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Love Calculation</title>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to the Love Doctor</h1>
+		</header>
+		<main class="lookNice">
+			<div class="loveCalculator">
+				<h2>
+					Let's find out how compatible you and your significant other are!
+				</h2>
+				<form>
+					<label for="yourName">Your name</label><br />
+					<input type="text" id="yourName" name="yourName" required /><br />
+					<label for="loverName">Your lover's name</label><br />
+					<input type="text" id="loverName" name="loverName" required /><br />
+					<input type="submit" value="Calculate" id="calculation" />
+				</form>
+			</div>
+			<div>
+				<h2>How many children do you want?</h2>
+				<button id="childCounter">Tap Here</button>
+			</div>
+		</main>
+		<script src="app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+p {
+	line-height: 25px;
+	font-size: larger;
+}
+
+ul {
+	font-size: larger;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	float: left;
+	padding: 2% 3%;
+	height: 325px;
+}
+
+.header {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+}
+
+.header > h1 {
+	color: darkgreen;
+}
+
+.upperCase {
+	text-transform: uppercase;
+}

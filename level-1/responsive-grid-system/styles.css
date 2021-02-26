@@ -1,0 +1,90 @@
+* {
+	box-sizing: border-box;
+	font-size: 0px;
+}
+
+body {
+	margin: 50px;
+}
+
+.div1 {
+	background-color: #f5c6d6;
+	height: 100px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.secondLine > div {
+	background-color: #ee2e84;
+	height: 100px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.thirdLine > div {
+	background-color: #85cfd8;
+	height: 100px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.fourthLine > div {
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.box8 {
+	width: 100%;
+	background-color: #8dc63f;
+}
+
+.box9 {
+	width: 100%;
+	background-color: #e76e34;
+}
+
+@media only screen and (min-width: 768px) {
+	.secondLine > div {
+		display: inline-block;
+		background-color: #ee2e84;
+		height: 100px;
+		width: 25%;
+		margin-bottom: 10px;
+	}
+
+	.div2 {
+		border-right: solid white 10px;
+	}
+
+	.div3 {
+		border-right: solid white 10px;
+	}
+
+	.div4 {
+		border-right: solid white 10px;
+	}
+
+	.thirdLine > div {
+		display: inline-block;
+		background-color: #85cfd8;
+		width: 50%;
+		margin-bottom: 10px;
+	}
+
+	.div6 {
+		border-right: solid white 10px;
+	}
+
+	.fourthLine > div {
+		display: inline-block;
+	}
+
+	.box8 {
+		width: 75%;
+		border-right: solid white 10px;
+	}
+
+	.box9 {
+		width: 25%;
+	}
+}
