@@ -1,0 +1,19 @@
+h1 {
+	color: blueviolet;
+	text-align: center;
+	margin-top: 150px;
+	font-size: 50px;
+}
+
+body {
+	background-color: rgb(255, 177, 249);
+}
+
+.discoBox {
+	position: relative;
+	top: 100px;
+	margin: auto;
+	height: 300px;
+	width: 300px;
+	border: solid white 3px;
+}
