@@ -17,6 +17,10 @@
 	padding: 20px;
 }
 
+.newMessage {
+	margin-top: 10px;
+}
+
 #main {
 	margin: 30px;
 	border: 1px solid black;

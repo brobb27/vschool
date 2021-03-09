@@ -19,12 +19,12 @@ header.append(titleFooter);
 
 // This changes the conversation to something fun and good
 
-const messages = document.getElementsByClassName('message');
+var messages = document.getElementsByClassName('message');
 
-// messages[0].innerText = 'Hey, I have something super interesting and fun to tell you!'
-// messages[1].innerText = 'No flipping way... What is it?'
-// messages[2].innerText = 'So this one time I was traveling and....'
-// messages[3].innerText = 'And what?! I am dying to hear it!'
+messages[0].innerText = 'Hey, I have something super interesting and fun to tell you!'
+messages[1].innerText = 'No flipping way... What is it?'
+messages[2].innerText = 'So this one time I was traveling and....'
+messages[3].innerText = 'And what?! I am dying to hear it!'
 
 
 // This makes it so you can clear the messages
@@ -40,28 +40,46 @@ clearButton.addEventListener('click', function () {
 
 const theme = document.getElementById('theme-drop-down');
 
-const leftMessages = document.getElementsByClassName('message left');
-const rightMessages = document.getElementsByClassName('message right');
+var leftMessages = document.getElementsByClassName('message left');
+var rightMessages = document.getElementsByClassName('message right');
+
+
 
 theme.addEventListener('change', function() {
+
     if (theme.value === 'theme-one') {
-        for (var i = 0; i < messages.length; i++) {
-        leftMessages[i].style.backgroundColor = 'burlywood'
-        leftMessages[i].style.color = 'black'
-        rightMessages[i].style.backgroundColor = 'lightblue'
+        for (var i = 0; i < leftMessages.length; i++) {
+        leftMessages[i].style.backgroundColor = 'burlywood';
+        leftMessages[i].style.color = 'black';
+        rightMessages[i].style.backgroundColor = 'lightblue';
+        
         }
     } else if (theme.value === 'theme-two') {
-        for (var i = 0; i < messages.length; i++) {
-        leftMessages[i].style.backgroundColor = 'black'
-        leftMessages[i].style.color = 'white'
-        rightMessages[i].style.backgroundColor = 'red'
+        for (var i = 0; i < leftMessages.length; i++) {
+        leftMessages[i].style.backgroundColor = 'black';
+        leftMessages[i].style.color = 'white';
+        rightMessages[i].style.backgroundColor = 'red';
+        
         }
     }
 
 })
 
-// Chrome say I have a bug on line 49 and 55? but I don't?
+// I want to know how to get the length including the new message so I can change all the themes
 
-// This allows you to add more messages to the thread!
+// This allows you to add more messages to the thread! TBD
+
+var sendMessage = document.getElementById('sendMessage');
+var messagesDiv = document.getElementById('messagesDiv');
 
 
+sendMessage.addEventListener('click', function() {
+    var newMessage = document.createElement('div');
+    var userMessage = document.getElementById('userMessage').value;
+    newMessage.textContent = userMessage;
+    newMessage.style.marginTop = '10px'
+    newMessage.className = 'message left'
+
+    messagesDiv.appendChild(newMessage)
+
+})
