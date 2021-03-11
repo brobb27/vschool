@@ -50,15 +50,17 @@ theme.addEventListener('change', function() {
     if (theme.value === 'theme-one') {
         for (var i = 0; i < leftMessages.length; i++) {
         leftMessages[i].style.backgroundColor = 'burlywood';
-        leftMessages[i].style.color = 'black';
-        rightMessages[i].style.backgroundColor = 'lightblue';
+        leftMessages[i].style.color = 'black'; }
+        for (var j = 0; j < rightMessages.length; j++) {
+        rightMessages[j].style.backgroundColor = 'lightblue'; }
         
-        }
+        
     } else if (theme.value === 'theme-two') {
         for (var i = 0; i < leftMessages.length; i++) {
         leftMessages[i].style.backgroundColor = 'black';
         leftMessages[i].style.color = 'white';
-        rightMessages[i].style.backgroundColor = 'red';
+        for (var j = 0; j < rightMessages.length; j++)
+        rightMessages[j].style.backgroundColor = 'red';
         
         }
     }
