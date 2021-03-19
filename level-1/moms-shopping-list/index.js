@@ -18,8 +18,18 @@ function addToList(event) {
     editButton.textContent = 'edit'
     editButton.className = 'editButton'
     editButton.addEventListener('click', editItemInList)
-    function editItemInList(event) {
-        event.preventDefault()
+
+    //This stores the previous value to an element
+    // console.log(document.newListItem(newListItem.childNodes[0]))
+
+    
+    function editItemInList() {
+
+        //This stores the original userInputText
+        const previousText = newListItem.childNodes[0].innerText
+
+        //This removes the users previous user input text
+        newListItem.removeChild(newListItem.childNodes[0])
         
         //This removes the edit button and turns it into a save button
         editButton.remove()
@@ -27,18 +37,19 @@ function addToList(event) {
         saveButton.textContent = 'save'
         newListItem.prepend(saveButton)
 
-        //This removes the users previous list item 
-        inputHolder.remove()
         //This creates a new input box for the user to make changes
         const userEditInputHolder = document.createElement('input')
         userEditInputHolder.type = 'text'
-        userEditInputHolder.value = userInputText
+        userEditInputHolder.value = previousText
         newListItem.prepend(userEditInputHolder)
 
         //This allows the user to save the new input
         saveButton.addEventListener('click', saveEdit)
-        function saveEdit(event) {
-            event.preventDefault()
+        function saveEdit() {
+
+            //This changes the save button back to the edit button
+            newListItem.prepend(editButton)
+            
 
             //This adds the new input to the list and removes the input box
             const editText = document.createElement('div')
@@ -46,6 +57,7 @@ function addToList(event) {
             newListItem.prepend(editText)
 
             userEditInputHolder.remove()
+            saveButton.remove()
         
 
         }
