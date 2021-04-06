@@ -1,20 +1,20 @@
 // Problem solving practice
 
 // 1.
-// function largest(array) {
-//     for (let i = 0; i < array.length; i++) {
-//         let firstNumber = array.indexOf(array[i])
-//         let secondNumber = firstNumber + 1
-//         let numberFromArray = array.slice(firstNumber, secondNumber)
-//         const greaterThan = (currentValue) => numberFromArray >= currentValue;
-//         if (array.every(greaterThan) === true) {
-//             console.log(numberFromArray)
-//         }
-//     }
-// }
+function largest(array) {
+    for (let i = 0; i < array.length; i++) {
+        let firstNumber = array.indexOf(array[i])
+        let secondNumber = firstNumber + 1
+        let numberFromArray = array.slice(firstNumber, secondNumber)
+        const greaterThan = (item) => numberFromArray >= item;
+        if (array.every(greaterThan) === true) {
+            console.log(numberFromArray)
+        }
+    }
+}
 
 
-// largest([3, 9, 2, 80, 3])
+largest([3, 20, 2, 60, 3])
 
 
 // CODE THAT DIDN'T WORK
