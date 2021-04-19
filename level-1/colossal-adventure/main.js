@@ -176,7 +176,7 @@ function playGame() {
             
         } else if (walking === `info`){
             console.log(player)
-        } else if (walking =! `info` && walking != `w`) {
+        } else if (walking != `info` && walking != `w`) {
             console.log(`I am sorry "${walking}" is not a valid move, Please try again.`)
         }
 
