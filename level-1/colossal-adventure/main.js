@@ -36,17 +36,15 @@ function enemyCreation(name, hp, item, damageMin, damageMax) {
 }
 
 // Creates the enemy "The Dragon"
-const dragon = new enemyCreation(`The Dragon`, 95, `Fire Breath`, 25, 61)
+const dragon = new enemyCreation(`The Dragon`, 105, `Fire Breath`, 25, 61)
 
 // Creates the enemy "Gator Man"
 const gatorMan = new enemyCreation(`Gator Man`, 50, `Gator Tooth`, 20, 71)
 
 // Creates the enemy "Sam The Slug"
-const samSlug = new enemyCreation(`Sam The Slug`, 170, `slime`, 5, 21)
+const samSlug = new enemyCreation(`Sam The Slug`, 170, `slime`, 9, 26)
 
 const enemyArray = [dragon, gatorMan, samSlug]
-
-// console.log(enemyArray)
 
 // THESE FUNCTIONS RUN THE GAME
 
@@ -101,9 +99,18 @@ function attack(enemy) {
         } else if (playersNewHp <= 0 && enemysNewHp > 0) {
             console.log(`${player.name}, I am sorry, ${enemy.name} dealt a wopping ${enemyAttackDmg} damage and killed you. You fought the good fight and perished. In your honor we have done... nothiing... because you lost!`)
             player.hp = playersNewHp
-        } else {
-            console.log(`This is awkward... You and ${enemy.name} struck eachother at the exact same time and killed eachother... LOL better luck next time!`)
-            player.hp = playersNewHp
+        } else if (playersNewHp <= 0 && enemysNewHp <= 0) {
+
+            const lifeOrDeath = randomSelector(3) 
+            if (lifeOrDeath === 0) {
+                console.log(`This is awkward... You and ${enemy.name} struck eachother at the exact same time and killed eachother... LOL better luck next time!`)
+                player.hp = playersNewHp
+            } else {
+                console.log(`${player.name}, you got lucky and struck first for ${playerAttackDmg} damage and killed ${enemy.name}! because it was so close you will only be rewarded 20 hp along with ${enemy.item}!`)
+                enemy.hp = enemysNewHp
+                player.hp = playersLifePoints + 15
+                player.items.push(enemy.item)
+            }
         }
 
 }
@@ -171,7 +178,6 @@ function playGame() {
             console.log(player)
         } else if (walking =! `info` && walking != `w`) {
             console.log(`I am sorry "${walking}" is not a valid move, Please try again.`)
-            walk();
         }
 
     }
