@@ -1,0 +1,39 @@
+body {
+	text-align: center;
+	line-height: 2.5;
+	background-color: #f2edd7;
+}
+
+div {
+	position: relative;
+	width: 100%;
+	padding: 60px 0px;
+}
+
+span {
+	color: white;
+}
+
+#flexContainer {
+	height: 700px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2fr;
+}
+
+#additionDiv {
+	background-color: #9bc074;
+}
+
+#subtractionDiv {
+	background-color: #8a3333;
+}
+
+#multiplicationDiv {
+	background-color: #3a7f94;
+}
+
+.button {
+	padding: 7px;
+	font-weight: bolder;
+}
