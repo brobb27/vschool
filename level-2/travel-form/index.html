@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Travel Form</title>
+	</head>
+	<body>
+		<header>
+			<h1>Spiritual X Airlines</h1>
+			<h4>The celing is the sky- Michael Jordan</h4>
+		</header>
+		<div id="theForm">
+			<form name="travelInfo">
+				<p>
+					<label for="travFirstName">First Name</label>
+					<br />
+					<input type="text" name="firstName" id="travFirstName" />
+				</p>
+				<p>
+					<label for="travLastName">Last Name</label>
+					<br />
+					<input type="text" name="lastName" id="travLastName" />
+				</p>
+				<p>
+					<label for="travAge">Age</label>
+					<br />
+					<input type="number" name="age" id="travAge" />
+				</p>
+				<p>
+					<label>Gender</label>
+					<br />
+					<label for="travMale">Male</label>
+					<input type="radio" name="gender" value="Male" id="travMale" />
+					<label for="travFemale">Female</label>
+					<input type="radio" name="gender" value="Female" id="travFemale" />
+				</p>
+				<p>
+					<label>Where are you traveling?</label>
+					<br />
+					<select name="destination" id="">
+						<option value="Newport, California">Newport, California</option>
+						<option value="Orlando, Florida">Orlando, Florida</option>
+						<option value="Cozumel, Mexico">Cozumel, Mexico</option>
+						<option value="Salt Lake City, Utah">Salt Lake City, Utah</option>
+					</select>
+				</p>
+				<p>
+					<label>Do you have any food allergies? (select all that apply)</label>
+					<br />
+					<label for="peanuts">Peanuts</label>
+					<input
+						type="checkbox"
+						name="allergies"
+						value="Peanuts"
+						id="peanuts"
+					/>
+					<label for="gluten">Gluten</label>
+					<input type="checkbox" name="allergies" value="Gluten" id="gluten" />
+					<label for="otherNuts">Other Nuts</label>
+					<input
+						type="checkbox"
+						name="allergies"
+						value="Other Nuts"
+						id="otherNuts"
+					/>
+				</p>
+				<button>Submit My Information</button>
+			</form>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>

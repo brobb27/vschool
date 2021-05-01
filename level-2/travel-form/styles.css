@@ -1,0 +1,18 @@
+body {
+	line-height: 1.5;
+	padding: 0px 100px;
+	font-size: larger;
+}
+
+header {
+	background-image: url(https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/cumulus-cloud.jpg/cumulus-cloud.jpg/metofficegovuk%3AheroXLarge);
+	text-align: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#theForm {
+	margin-top: 200px;
+}
