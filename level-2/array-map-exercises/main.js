@@ -98,4 +98,10 @@ console.log(oldEnough)
 
 // 6) Make an array of the names in h1s, and the ages in h2s
 
+const readyToImport = namesOnly.map(person => {
+    return `<h1>${person.name}</h1><h2>${person.age}</h2>`
+})
+
+console.log(readyToImport)
+
 // Do they want them in actual h1 and h2's or do they want them in a string with h1 and h2's?
