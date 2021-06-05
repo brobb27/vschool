@@ -32,8 +32,8 @@ body {
 	display: inline-block;
 	position: relative;
 	top: 70px;
-	width: 150px;
-	height: 150px;
+	width: 160px;
+	height: 160px;
 	margin: -70px 70px 0 0;
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -67,20 +67,16 @@ body {
 	background-color: rgb(13 88 85 / 87%);
 }
 
-#buttons {
-	margin-right: 15px;
-}
-
 #buttonOne {
 	all: unset;
 	cursor: pointer;
 	color: rgb(255 255 255 / 56%);
-	background-color: rgba(255, 255, 255, 0.11);
+	background-color: rgb(255 255 255 / 8%);
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	height: 90px;
-	width: 420px;
+	width: 325px;
 	font-family: "Julius Sans One", sans-serif;
 	font-weight: lighter;
 }
@@ -89,13 +85,15 @@ body {
 	all: unset;
 	cursor: pointer;
 	color: rgb(255 255 255 / 56%);
-	background-color: rgba(255, 255, 255, 0.11);
+	background-color: rgb(255 255 255 / 8%);
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	height: 90px;
-	width: 100px;
+	width: 90px;
 	font-family: "verdemoderna";
+	position: relative;
+	right: 6px;
 }
 
 #buttonOne:hover,
@@ -128,8 +126,23 @@ body {
 	font-size: 40px;
 }
 
-.authors {
-	background-color: rgba(138, 188, 159, 0.5);
+#authors {
+	background-color: #e5ede8;
+	display: flex;
+	justify-content: center;
+}
+
+#authors > ul {
+	list-style-type: none;
+	position: relative;
+	right: 80px;
+	margin-top: 90px;
+}
+
+#authors > ul > li {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: solid lightgrey;
 }
 
 #mainDes {
@@ -144,6 +157,10 @@ body {
 	background-color: whitesmoke;
 }
 
+#spaceHolder {
+	background-color: #e5ede8;
+}
+
 #oneFoot {
 	grid-column: 1 / 3;
 	background-color: aquamarine;
@@ -153,9 +170,27 @@ body {
 	background-color: aquamarine;
 }
 
+/* FLEX */
+/* use flexbox to make the icons behave like css zen garden's social icons */
+.icons {
+	font-family: "verdemoderna";
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+	margin: auto;
+	padding: 10px;
+}
+
+.icons > div {
+	width: 30px;
+	height: 30px;
+	border: solid black;
+	border-radius: 50%;
+}
+
 /* use this media query to help these two cells drop to the bottom when screens are smaller */
 
-@media (max-width: 1020px) {
+@media only screen and (max-width: 1500px) {
 	/* container could use some help so that it's children are full screen width */
 	.container {
 		grid-template-rows: 9;
@@ -180,19 +215,28 @@ body {
 
 	#subTitle {
 		grid-column: 1 / 3;
+		position: absolute;
+		width: 100%;
+		bottom: 126px;
+	}
+
+	#buttons {
+		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 
 	#intro {
 		grid-column: 1 / 3;
 	}
 
-	.authors {
+	#authors {
 		grid-column: 1 / 3;
 		grid-row: 8 / 9;
 		background-color: lightcoral;
 	}
 
-	#mainDescription {
+	#mainDes {
 		grid-column: 1 / 3;
 	}
 
@@ -216,22 +260,4 @@ body {
 		grid-column: 1 /3;
 		background-color: aquamarine;
 	}
-}
-
-/* FLEX */
-/* use flexbox to make the icons behave like css zen garden's social icons */
-.icons {
-	font-family: "verdemoderna";
-	display: flex;
-	justify-content: space-around;
-	width: 50%;
-	margin: auto;
-	padding: 10px;
-}
-
-.icons > div {
-	width: 30px;
-	height: 30px;
-	border: solid black;
-	border-radius: 50%;
 }
