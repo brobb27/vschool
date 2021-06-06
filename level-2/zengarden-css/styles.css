@@ -9,21 +9,103 @@ body {
 .container {
 	display: grid;
 	grid-template-rows: 6;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 3fr;
 	/* with six rows, 50px high */
 	/* default all cells/children on the left be 2/3 the screen width, and all on the left 1/3 */
 }
-.container > div {
-	border: solid black 2px;
+
+/* This is the grid layout */
+
+#rowOne {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column: 1 / 3;
+	background-image: url(http://www.csszengarden.com/214/gridlines.png),
+		url(http://www.csszengarden.com/214/noise.png),
+		url(http://www.csszengarden.com/214/contours.png),
+		url(http://www.csszengarden.com/214/huntington.jpg);
+	background-repeat: repeat, repeat, repeat, no-repeat;
+	background-size: auto, auto, auto, cover;
+	background-attachment: fixed, scroll, scroll, scroll;
+	background-position: 2% 7%, 0% 45%;
+}
+
+#rowTwo {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column: 1 / 3;
+}
+
+#rowThree {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column: 1 / 3;
+	background-image: url(http://www.csszengarden.com/214/bamboo.png);
+	background-color: rgba(138, 188, 159, 0.5);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: 0% 0%;
+}
+
+#rowFour {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column: 1 / 3;
+}
+
+/* All styles for the footers */
+
+#oneFoot {
+	grid-column: 1 / 3;
+	color: lightgrey;
+	height: 27.3rem;
+	background-image: url(http://www.csszengarden.com/214/gridlines.png),
+		url(http://www.csszengarden.com/214/noise.png),
+		url(http://www.csszengarden.com/214/contours.png),
+		url(http://www.csszengarden.com/214/koi.jpg);
+	background-position: right;
+	background-size: auto, auto, auto, cover;
+	background-repeat: repeat, repeat, repeat, no-repeat;
+	background-attachment: fixed, scroll, scroll, scroll;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 95%;
+}
+
+#oneFoot > h1 {
+	width: 70%;
+	font-size: 2.7rem;
+	line-height: 2;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.4);
+	font-family: "Libre Baskerville", sans-serif;
+	font-weight: lighter;
+}
+
+#oneFoot > h1 > a {
+	color: rgba(255, 255, 255, 0.7);
+	font-style: normal;
+}
+
+#twoFoot {
+	grid-column: 1 /3;
+	height: 14rem;
+	background: #134347;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* All styles for the title div */
 
 #title {
 	text-align: center;
-	padding: 80px;
-	font-size: 27px;
-	background-color: rgb(13 88 85 / 87%);
+	padding: 65px 80px;
+	grid-column: 1 / 3;
+	position: relative;
+	bottom: 50px;
 }
 
 #title > h1::before {
@@ -31,9 +113,10 @@ body {
 	background: url(images/download.svg);
 	display: inline-block;
 	position: relative;
-	top: 70px;
-	width: 160px;
-	height: 160px;
+	top: 100px;
+	left: 36px;
+	width: 12.3rem;
+	height: 12.3rem;
 	margin: -70px 70px 0 0;
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -43,15 +126,15 @@ body {
 	font-weight: 100;
 	color: #fff;
 	font-family: "Julius Sans One", sans-serif;
-	font-size: 65px;
+	font-size: 68px;
 }
 
 #title > h2 {
 	position: relative;
-	font-size: 30px;
+	font-size: 2.1rem;
 	font-weight: bolder;
 	bottom: 25px;
-	left: 20px;
+	left: 6%;
 	color: rgba(255, 255, 255, 0.6);
 }
 
@@ -64,7 +147,13 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	background-color: rgb(13 88 85 / 87%);
+	grid-column: 3 / 3;
+	background-color: #2e5e6361;
+}
+
+#buttons {
+	height: 22%;
+	width: 82%;
 }
 
 #buttonOne {
@@ -75,8 +164,8 @@ body {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	height: 90px;
-	width: 325px;
+	height: 100%;
+	width: 75%;
 	font-family: "Julius Sans One", sans-serif;
 	font-weight: lighter;
 }
@@ -89,10 +178,12 @@ body {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	height: 90px;
-	width: 90px;
-	font-family: "verdemoderna";
+	height: 100%;
+	width: 20%;
+	font-family: "Nanum Gothic Coding", monospace;
+	font-weight: bolder;
 	position: relative;
+	top: 1px;
 	right: 6px;
 }
 
@@ -107,7 +198,7 @@ body {
 #intro,
 #mainDes,
 #conclusion {
-	padding: 60px 120px 75px 195px;
+	padding: 4em 10% 4em 15%;
 }
 
 #intro > p,
@@ -121,10 +212,12 @@ body {
 #mainDes > h3,
 #conclusion > h3 {
 	font-family: "Julius Sans One", sans-serif;
-	line-height: 0.5;
+	line-height: 0;
 	font-weight: 100;
-	font-size: 40px;
+	font-size: 2.35rem;
 }
+
+/* All styles for the author section */
 
 #authors {
 	background-color: #e5ede8;
@@ -134,23 +227,63 @@ body {
 
 #authors > ul {
 	list-style-type: none;
+	margin-top: 10%;
+	margin-left: 0rem;
+	padding-left: 0px;
+	width: 60%;
 	position: relative;
-	right: 80px;
-	margin-top: 90px;
+	right: 2rem;
 }
 
-#authors > ul > li {
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	border-bottom: solid lightgrey;
+.authorListItem {
+	padding: 2.3em 0px;
+	border-bottom: solid 1px #d9e3dc;
+	line-height: 0.9;
 }
 
-#mainDes {
-	background-color: rgba(138, 188, 159, 0.5);
+#lastListItem {
+	border-bottom: none;
 }
 
-.links {
-	background-color: lightpink;
+.designName {
+	display: block;
+	color: #607476;
+	font-size: 1.6em;
+	font-family: "Julius Sans One", sans-serif;
+}
+
+.designerName {
+	color: #616857;
+	font-size: 1.3em;
+}
+
+#authors > ul > li > span {
+	font-style: italic;
+	color: lightgrey;
+	font-size: 1.4em;
+}
+
+/* Style for rowThree */
+/* All styles for the links */
+
+#links {
+	background-color: rgb(138 188 159 / 24%);
+	display: flex;
+}
+
+#links > ul {
+	list-style: none;
+	margin-left: 1.5rem;
+	margin-top: 25%;
+}
+
+.linksListItem {
+	color: #607476;
+	border-top: solid 1px #a0b9ad;
+	font-family: "Julius Sans One", sans-serif;
+	font-size: 1.6em;
+	width: 95%;
+	padding: 2rem 0rem;
 }
 
 #conclusion {
@@ -161,18 +294,10 @@ body {
 	background-color: #e5ede8;
 }
 
-#oneFoot {
-	grid-column: 1 / 3;
-	background-color: aquamarine;
-}
-#twoFoot {
-	grid-column: 1 /3;
-	background-color: aquamarine;
-}
-
 /* FLEX */
 /* use flexbox to make the icons behave like css zen garden's social icons */
 .icons {
+	color: white;
 	font-family: "verdemoderna";
 	display: flex;
 	justify-content: space-around;
@@ -215,9 +340,10 @@ body {
 
 	#subTitle {
 		grid-column: 1 / 3;
-		position: absolute;
+		position: relative;
 		width: 100%;
-		bottom: 126px;
+		bottom: 94px;
+		margin-bottom: -94px;
 	}
 
 	#buttons {
@@ -240,7 +366,7 @@ body {
 		grid-column: 1 / 3;
 	}
 
-	.links {
+	#links {
 		grid-column: 1 / 3;
 		grid-row: 9 / 10;
 		background-color: lightpink;
@@ -253,11 +379,9 @@ body {
 	#oneFoot {
 		grid-row: 6 / 7;
 		grid-column: 1 / 3;
-		background-color: aquamarine;
 	}
 	#twoFoot {
 		grid-row: 7 / 8;
 		grid-column: 1 /3;
-		background-color: aquamarine;
 	}
 }
