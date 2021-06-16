@@ -1,0 +1,75 @@
+{
+        "menu": [
+            {
+            "appetizers": [
+                {
+                    "name": "Fried Pickles",
+                    "ingredients": ["Pickles", "Beer Batter"],
+                    "description": "Our famous beer battered, deep fried pickles that will make you question 'what came first, the pickle or the cucumber?'"
+                },
+                {
+                    "name": "Sproutin Onion",
+                    "ingredients": ["Onion", "Seasoned Breading", "Special Sauce"],
+                    "description": "You've heard of the 'Blooming Onion' and the 'Cactus Blossom' now we present the 'Sproutin Onion'. It's the same thing... just better"
+                }
+            ]
+            },
+            {
+            "cold sandwhiches": [
+                {
+                    "name": "Classic Club",
+                    "ingredients": "White bread, mayo, mustard, lettuce put some turkey, ham, and bacon on there too!",
+                    "description": "What more do we need to say? It's your classic club sandwhich with all the essentials"
+                },
+                {
+                    "name": "Turkey BL - T",
+                    "ingredients": ["Toasted white bread", "Turkey", "Bacon", "Lettuce", "No Tomato... That's just nasty."],
+                    "description": "We think this is how the BLT was supposed to be. Lot's of bacon and lettuce with some turkey and take off that tomato."
+                }
+
+            ]
+            },
+            {
+            "hot sandwiches": [
+                {
+                    "name": "Steak and Everything",
+                    "ingredients": ["12' sub", "Steak", "Everything!", "(peppers, onions, mushrooms and cheese... lots of cheese)"],
+                    "description": "This is everything you could as for and more! (the extra cheese is the 'more' of that statment)"
+                },
+                {
+                    "name": "Meatball Marinara",
+                    "ingredients": "12' sub, seasoned italian meetballs, special red sauce (it's really just good marinara sauce)",
+                    "description": "This will take you back to your days in Italy, even if you've never been there."
+                }
+            ]
+            },
+            {
+                "desserts": [
+                    {
+                        "name": "Italian Ice",
+                        "ingredients": ["Milk", "sugar"],
+                        "description": "It's like icecream, but better. Ask any Italian"
+                    },
+                    {
+                        "name": "Cheesecake Bites",
+                        "ingredients": ["cheesecake", "classic breading"],
+                        "description": "We took cheescake, wrapped it up in goodness, and freid it. Your welcome!"
+                    }
+                ]
+            },
+            {
+                "drinks": [
+                    {
+                        "name": "Lemonade",
+                        "ingredients": ["water", "lemons", "sugar"],
+                        "description": "Freshly squeezed everyday. Real pulp and lemon juice is a given."
+                    },
+                    {
+                        "name": "Coke",
+                        "ingredients": ["water", "classified"],
+                        "description": "Would we really be a restaraunt without it?"
+                    }
+                ]
+            }
+        ]
+    }
