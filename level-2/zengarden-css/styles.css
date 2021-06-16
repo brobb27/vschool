@@ -599,6 +599,7 @@ body {
 		background-position: 0% 0%;
 		border-top: solid 1px #a0b9ad;
 		border-bottom: solid 1px #a0b9ad;
+		overflow: hidden;
 	}
 
 	#linksResponsive > ul {
