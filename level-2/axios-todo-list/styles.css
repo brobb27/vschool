@@ -1,0 +1,67 @@
+/* Styles for the TODO list */
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#header {
+	height: 100%;
+	width: 100%;
+	padding-top: 4em;
+	padding-bottom: 4em;
+	background-image: url(https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+#todoForm {
+	line-height: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#todoForm > input {
+	margin-bottom: 0.3em;
+}
+
+.listItem {
+	margin-bottom: -2em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.listImg {
+	position: relative;
+	bottom: 6em;
+	left: 14em;
+	height: 5em;
+	width: 5em;
+	border-radius: 25%;
+}
+
+.completedLabel {
+	position: relative;
+	bottom: 3.3em;
+	right: 5em;
+}
+
+.completedCheck {
+	position: relative;
+	bottom: 3.9em;
+	right: 6em;
+}
+
+.completed {
+	text-decoration: line-through;
+}
+
+.deleteButton {
+	position: relative;
+	bottom: 4em;
+}
