@@ -6,12 +6,14 @@ const todoList = document.getElementById('todoList')
 
 // This will Get the information from the api
 
-axios.get("https://api.vschool.io/blairrobbins/todo")
-    .then(response => console.log(response.data))
+// axios.get("https://api.vschool.io/blairrobbins/todo")
+//     .then(response => console.log(response.data))
 
 function getData() {
     axios.get("https://api.vschool.io/blairrobbins/todo")
-    .then(response => { todoReceived(response)})
+    .then(response => {console.log(response.data)
+        clearList()
+        todoReceived(response)})
     .catch(error => console.log(error))
 }
 
@@ -62,12 +64,10 @@ function todoReceived(response) {
     // This creates an event listener for the checkbox
     completed.addEventListener('change', function(e) {
         if (completed.checked === true) {
-            clearList()
             axios.put(`https://api.vschool.io/blairrobbins/todo/${_id}`, {completed: true})
                 .then(response => getData())
                 .catch(error => console.log(error))
         } else {
-            clearList()
             axios.put(`https://api.vschool.io/blairrobbins/todo/${_id}`, {completed: false})
                 .then(response => getData())
                 .catch(error => console.log(error))
@@ -81,7 +81,6 @@ function todoReceived(response) {
 
     // This allows the user to delete an item from the list
     deleteButton.addEventListener('click', function(){
-        clearList()
         axios.delete(`https://api.vschool.io/blairrobbins/todo/${_id}`)
             .then(response => getData())
             .catch(error => console.log(error))
@@ -119,7 +118,6 @@ const todoForm = document.todoForm
 
 todoForm.addEventListener('submit', function(e) {
     e.preventDefault()
-    clearList()
 
     const newTodo = {
         completed: false,
@@ -149,5 +147,3 @@ function clearList() {
 
 }
 
-
-// This allows the user to mark the items as complete or not

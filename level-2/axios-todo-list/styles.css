@@ -5,7 +5,19 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	color: #3a4e7a;
+	font-family: "Roboto", sans-serif;
+	background: url(https://i.pinimg.com/736x/ea/60/4e/ea604e5b8c8dd751a0576f0ec1f12ac6.jpg)
+		no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #ffffffad;
+	background-blend-mode: lighten;
 }
+
+/* Header styles */
 
 #header {
 	height: 100%;
@@ -13,10 +25,19 @@ body {
 	padding-top: 4em;
 	padding-bottom: 4em;
 	background-image: url(https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
-	background-position: 0% 100%;
+	background-position: 0% 25%;
 	background-repeat: no-repeat;
 	background-size: 100%;
-	background-attachment: fixed;
+	background-attachment: cover;
+}
+
+#header > h1 {
+	color: #5c6e91;
+	font-weight: bolder;
+	position: relative;
+	right: 25%;
+	font-size: 2.5em;
+	letter-spacing: 0.2em;
 }
 
 #todoForm {
@@ -24,37 +45,90 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
+	right: 25%;
 }
 
 #todoForm > input {
+	all: unset;
+	text-align: left;
+	padding-left: 0.2em;
 	margin-bottom: 0.3em;
+	color: white;
+	background-color: #5c6e91;
+	height: 3em;
+	width: 15em;
+	border-radius: 5%;
+}
+
+#todoForm > input::placeholder {
+	color: white;
+	opacity: 1;
+	font-size: 100%;
+	padding-left: 0.2em;
+}
+
+#addButton {
+	border: none;
+	box-shadow: none;
+	margin-top: 1em;
+	height: 2.5em;
+	width: 8.5em;
+	background-color: #687591;
+	color: rgba(255, 255, 255, 0.911);
+	font-weight: bolder;
+	font-size: 1em;
+	border-radius: 10%;
+	transition-property: all;
+	transition-duration: 0.2s;
+}
+
+#addButton:hover {
+	cursor: pointer;
+	background-color: #4d638f;
+}
+
+/* List styles */
+
+#todoList {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .listItem {
 	margin-bottom: -2em;
-	padding-top: 2em;
+	margin-top: 4em;
+	padding-top: 1em;
 	padding-bottom: 2em;
+	position: relative;
+	right: 5em;
+	border-bottom: solid #315192;
+	border-width: 0.2em;
 }
 
 .listImg {
 	position: relative;
 	bottom: 6em;
-	left: 14em;
-	height: 5em;
-	width: 5em;
+	left: 30em;
+	height: 15em;
+	width: 15em;
 	border-radius: 25%;
 }
 
 .completedLabel {
+	font-size: 1.3em;
 	position: relative;
-	bottom: 3.3em;
-	right: 5em;
+	bottom: 5.6em;
+	right: 6.5em;
 }
 
 .completedCheck {
+	height: 1.5em;
+	width: 1.5em;
 	position: relative;
-	bottom: 3.9em;
-	right: 6em;
+	bottom: 8.5em;
+	right: 10em;
 }
 
 .completed {
@@ -63,5 +137,26 @@ body {
 
 .deleteButton {
 	position: relative;
-	bottom: 4em;
+	bottom: 7.4em;
+	right: 6em;
+	border: none;
+	box-shadow: none;
+	height: 2.3em;
+	width: 8.5em;
+	background-color: #5c6e91;
+	color: rgba(255, 255, 255, 0.911);
+	font-weight: bolder;
+	font-size: 1em;
+	border-radius: 10%;
+	transition-property: all;
+	transition-duration: 0.2s;
+}
+
+.deleteButton:hover {
+	cursor: pointer;
+	background-color: #315192;
+}
+
+.listDescrip {
+	font-size: 1.2em;
 }
