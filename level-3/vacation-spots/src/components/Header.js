@@ -4,7 +4,7 @@ function Header() {
     return(
         <div id="header">
             <h1>The Vacation Destinations</h1>
-            <p>something else</p>
+            <p>Where to next?</p>
         </div>
     )
 }

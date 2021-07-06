@@ -2,8 +2,34 @@ body,
 html {
 	margin: 0;
 	padding: 0;
+	text-align: center;
+	background-color: #e5ececc4;
+}
+
+#root {
+	margin-top: -2%;
+	padding: 0;
+	height: 100%;
 }
 
 #header {
-	background-color: aqua;
+	color: #fce6d8;
+	font-weight: bolder;
+	letter-spacing: 2px;
+	padding-top: 7%;
+	padding-bottom: 7%;
+	background-image: url(https://images.unsplash.com/photo-1477266190403-a01b87100271?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+	background-repeat: no-repeat;
+	background-position: 20% 20%;
+	background-size: cover;
+}
+
+.cardo {
+	padding: 4rem 0rem;
+	border-bottom: black solid 1px;
+}
+
+.locationImg {
+	height: 18rem;
+	width: 18rem;
 }
