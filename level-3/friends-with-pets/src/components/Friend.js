@@ -1,10 +1,10 @@
 import React from 'react'
-import Pets from './Pets'
+import Pet from './Pet'
 
 
 function Friend(props) {
     let petArr = props.friend.pets
-    const petsInfo = petArr.map(pet => <Pets name={pet.name} breed={pet.breed} key={pet.name}/>)
+    const petsInfo = petArr.map(pet => <Pet name={pet.name} breed={pet.breed} key={pet.name}/>)
     return (
         <div className="friendItem">
             <h3>Name: {props.friend.name}</h3>

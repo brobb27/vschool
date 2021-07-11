@@ -200,6 +200,9 @@ html {
 
 #icons > div > a {
 	all: unset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: whitesmoke;
 	font-size: 2rem;
 }

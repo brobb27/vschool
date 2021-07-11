@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Pets(props) {
+function Pet(props) {
     return (
         <div>
         <ul>
@@ -11,4 +11,4 @@ function Pets(props) {
     )
 }
 
-export default Pets
+export default Pet
