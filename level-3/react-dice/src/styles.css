@@ -1,0 +1,42 @@
+body,
+html {
+	text-align: center;
+}
+
+#header {
+	color: cadetblue;
+}
+
+#diceBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 3rem 0rem;
+}
+
+#diceBox > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: solid 1px black;
+	height: 5rem;
+	width: 5rem;
+	margin: 1rem;
+	border-radius: 15%;
+}
+
+#rollButton {
+	height: 3rem;
+	width: 8rem;
+	font-size: 1.1rem;
+	background-color: cadetblue;
+	border: none;
+	border-radius: 5%;
+	color: rgb(238, 237, 237);
+}
+
+#rollButton:hover {
+	background-color: rgb(117, 198, 201);
+	cursor: pointer;
+	border: none;
+}
