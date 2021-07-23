@@ -7,6 +7,7 @@ class Main extends React.Component {
         this.state = {
             color: ['black', 'black', 'black', 'black']
         }
+        this.handleSmoll = this.handleSmoll.bind(this)
     }
 
     // Change boxes white if the first box isn't white else change all black
@@ -96,7 +97,7 @@ class Main extends React.Component {
                     {boxComponents}
                 </div>
                 <div id='buttons'>
-                    <button onClick={() => this.handleSmoll()}>Smoll DJ</button>
+                    <button onClick={this.handleSmoll}>Smoll DJ</button>
                     <button onClick={() => this.handleParty()}>Party DJ</button>
                     <button onClick={() => this.handleProOne()}>Pro One DJ</button>
                     <button onClick={() => this.handleProTwo()}>Pro Two DJ</button>

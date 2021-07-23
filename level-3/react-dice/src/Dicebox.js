@@ -13,10 +13,11 @@ class Dicebox extends React.Component {
             num4: random(),
             num5: random(),
         }
+        this.handleRoll = this.handleRoll.bind(this)
     }
 
     handleRoll() {
-        this.setState(prevState => {
+        this.setState(() => {
             function random() {
                 return Math.floor(Math.random() * 6 + 1)
             }
