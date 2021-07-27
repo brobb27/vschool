@@ -22,6 +22,7 @@ class Input extends React.Component {
     handleSubmit(event) {
         event.preventDefault()
         this.setState(prevState => {
+            // Not sure how this line of code is working? Change to how it is done on Name badge
             const updatedList = prevState.namesList.push(this.state.name)
 
             return {
