@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+	background-image: url(https://media.thenationaldigest.com/wp-content/uploads/2019/12/02113803/Italian-Mafia-400x400-1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: bottom;
+	background-color: #be202d;
+}
+
+#header {
+	background-color: rgb(19, 14, 14);
+	color: rgb(141, 15, 15);
+	height: 6rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#main {
+	position: relative;
+	top: 2rem;
+	margin: 5rem auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	width: 25rem;
+}
+
+.idCard {
+	color: whitesmoke;
+	font-size: 1.2rem;
+	font-weight: bolder;
+	margin: 1rem 1rem;
+	border-radius: 5%;
+}
+
+.idImage {
+	height: 12rem;
+	width: 12rem;
+	border-radius: 3%;
+	border: solid 2px black;
+}
+
+.idName {
+	position: relative;
+	bottom: 2rem;
+	background-color: #c0212ec9;
+	height: 1.65rem;
+	border-radius: 15%;
+	width: 99%;
+}
