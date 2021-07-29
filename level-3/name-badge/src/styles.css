@@ -56,9 +56,8 @@ html {
 	align-items: center;
 	position: relative;
 	bottom: 1%;
-	background-color: rgb(94, 94, 94);
 	border-radius: 5%;
-	color: rgb(221, 217, 217);
+	color: black;
 	height: 4rem;
 }
 

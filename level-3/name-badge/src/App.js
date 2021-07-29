@@ -12,7 +12,8 @@ class App extends React.Component {
         birthPlace: '',
         phone: '',
         favFood: '',
-        aboutYou: ''
+        aboutYou: '',
+        randomColor: ''
       },
       badgeList: []
     }
@@ -46,7 +47,8 @@ class App extends React.Component {
           birthPlace: '',
           phone: '',
           favFood: '',
-          aboutYou: ''
+          aboutYou: '',
+          randomColor: ''
         },
         badgeList: updatedList,
       }
