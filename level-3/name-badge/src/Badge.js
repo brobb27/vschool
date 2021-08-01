@@ -18,6 +18,7 @@ class Badge extends React.Component {
     //     })
     // }
 
+    // when the component mounts it sets the state of random color to the new retrieved color
     componentDidMount() {
         axios.get(`https://www.colr.org/json/color/random?timestamp=${new Date().getTime()}`)
             .then(res => this.setState({

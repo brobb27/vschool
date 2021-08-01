@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #263238;
+	color: #d8c17a;
+	margin: 0rem 4rem;
+}
+
+#title {
+	font-family: "Noto Sans", sans-serif;
+	font-weight: bolder;
+	height: 5rem;
+	margin: 2rem 8rem;
+	letter-spacing: 0.2rem;
+	background-color: #263238;
+	color: #d8c17a;
+	text-align: center;
+	border-bottom: double 1px #d8c17a;
+	padding-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/* Creation container styles */
+
+#creationContainer {
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Loading meme container */
+
+#loadingMemeContainer {
+	height: 30rem;
+}
+
+/* Meme contatiner styles */
+
+#memeContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem 1rem;
+}
+
+#memeContainer > img {
+	height: 29rem;
+	width: 33rem;
+	border-radius: 5%;
+}
+
+#memeContainer > button {
+	position: relative;
+	bottom: 2rem;
+}
+
+#topText {
+	position: relative;
+	bottom: 27.75rem;
+	max-width: 29.7rem;
+	font-size: 1.6rem;
+}
+
+#bottomText {
+	position: relative;
+	bottom: 5rem;
+	max-width: 29.7rem;
+	font-size: 1.6rem;
+}
+
+#memeHeader {
+	text-align: center;
+}
+
+/* Meme Form Styles */
+
+#memeForm {
+	position: relative;
+	right: 4%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#memeForm > div {
+	display: flex;
+	flex-direction: column;
+	margin-top: -2rem;
+	margin-bottom: -2rem;
+}
+
+#memeForm > div > label {
+	font-size: 1.2rem;
+}
+
+#memeForm > button {
+	position: relative;
+	bottom: 1rem;
+}
+
+.inputBox {
+	all: unset;
+	cursor: auto;
+	margin: 1rem 0rem;
+	font-size: 1.2rem;
+	height: 3rem;
+	border-radius: 8%;
+	padding-left: 0.5rem;
+	border: none;
+	background-color: #4d6470;
+}
+
+.inputBox::placeholder {
+	font-size: 1.2rem;
+	color: rgb(172, 172, 172);
+}
+
+.colorInput {
+	text-align: center;
+}
+
+/* Button styles */
+
+.button {
+	all: unset;
+	border: none;
+	text-align: center;
+	font-size: 1.2rem;
+	background-color: #d8c17a;
+	color: #1c2529;
+	height: 3rem;
+	width: 10rem;
+	border-radius: 20%;
+	transition: ease-in-out 0.3s;
+}
+
+.button:hover {
+	background-color: #a3925d;
+	cursor: pointer;
+}
+
+#savedList {
+	text-align: center;
+	margin-bottom: 7rem;
+}
