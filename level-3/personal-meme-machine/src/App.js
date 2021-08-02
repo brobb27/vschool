@@ -1,22 +1,27 @@
 import React from 'react'
 import axios from 'axios'
+import SavedMeme from './SavedMeme'
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      topText: '',
-      topColor: '#000000',
-      bottomText: '',
-      bottomColor: '#000000',
-      img: '',
-      id: '',
+      meme: {
+        topText: '',
+        topColor: '#000000',
+        bottomText: '',
+        bottomColor: '#000000',
+        img: '',
+        id: ''
+      },
       loading: false,
-      memeList: [],
+      memeList: []
     }
 
     this.getImg = this.getImg.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.saveMeme = this.saveMeme.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   // Retreives a random image from the API
@@ -27,9 +32,14 @@ class App extends React.Component {
 
     axios.get('https://api.imgflip.com/get_memes')
     .then(res => {
-        this.setState({
-        img: res.data.data.memes[randomNum].url,
-        id: res.data.data.memes[randomNum].id
+        this.setState(prevState => {
+          return {
+            meme: {
+              ...prevState.meme,
+              img: res.data.data.memes[randomNum].url,
+              id: res.data.data.memes[randomNum].id
+            }
+          }
       })
      }
     )
@@ -45,29 +55,70 @@ class App extends React.Component {
 
     axios.get('https://api.imgflip.com/get_memes')
     .then(res => {
-        this.setState({
-        loading: false,
-        img: res.data.data.memes[randomNum].url,
-        id: res.data.data.memes[randomNum].id
-      })
-     }
-    )
+      this.setState(prevState => {
+        return {
+          loading: false,
+          meme: {
+            ...prevState.meme,
+            img: res.data.data.memes[randomNum].url,
+            id: res.data.data.memes[randomNum].id
+          }
+        }
+    })
+   }
+  )
     .catch(err => console.log(err))
   }
 
   // Handles the user input and changes state to display their text
   handleChange(event) {
     const {name, value} = event.target
-    this.setState({
-      [name]: value
+    this.setState(prevState => {
+      return {
+        meme: {
+          ...prevState.meme,
+          [name]: value
+        }
+      }
     })
 
   }
 
+  // Allows the user to save the image to the list of saved memes
+  saveMeme(e) {
+    e.preventDefault();
+
+    this.setState(prevState => {
+      const updatedList = [...prevState.memeList, this.state.meme]
+      return {
+        meme: {
+          topText: '',
+          topColor: '#000000',
+          bottomText: '',
+          bottomColor: '#000000',
+          img: '',
+          id: ''
+        },
+        memeList: updatedList
+      }
+    })
+
+    this.getImg(e)
+  }
+
+  // Deletes the meme from the saved list
+  handleDelete(id) {
+    this.setState(prevState => {
+      return {
+        memeList: prevState.memeList.filter(item => item.id !== id)
+      }
+    })
+  }
 
   render() {
-    const topTextcolor = { color: this.state.topColor }
-    const bottomTextColor = { color: this.state.bottomColor }
+    const topTextcolor = { color: this.state.meme.topColor }
+    const bottomTextColor = { color: this.state.meme.bottomColor }
+    const memeComponents = this.state.memeList.map(memeObject => <SavedMeme key={memeObject.id} meme={memeObject} delete={ this.handleDelete }/>)
     
     if (this.state.loading === false) {
       return(
@@ -77,12 +128,12 @@ class App extends React.Component {
           </div>
           <div id='creationContainer'>
             <div id='memeContainer'>
-              <img src={this.state.img} alt='Meme'></img>
+              <img src={this.state.meme.img} alt='Meme'></img>
               <h2 id="topText" style={topTextcolor}>
-                {this.state.topText}{'\u00A0'}
+                {this.state.meme.topText}{'\u00A0'}
               </h2>
               <h2 id="bottomText" style={bottomTextColor}>
-                {this.state.bottomText}{'\u00A0'}
+                {this.state.meme.bottomText}{'\u00A0'}
               </h2>
               <button className='button' onClick={this.getImg}>
                 Change Image
@@ -96,8 +147,8 @@ class App extends React.Component {
                     type='text'
                     name='topText'
                     className='inputBox'
-                    value={this.state.topText}
-                    maxLength='45'
+                    value={this.state.meme.topText}
+                    maxLength='43'
                     placeholder='Top Text'
                     onChange={this.handleChange}
                   />
@@ -106,7 +157,7 @@ class App extends React.Component {
                   <input 
                     type='color'
                     name='topColor'
-                    value={this.state.topColor}
+                    value={this.state.meme.topColor}
                     onChange={this.handleChange}
                   />
                 </label>
@@ -118,8 +169,8 @@ class App extends React.Component {
                     type='text'
                     name='bottomText'
                     className='inputBox'
-                    value={this.state.bottomText}
-                    maxLength='45'
+                    value={this.state.meme.bottomText}
+                    maxLength='43'
                     placeholder='Bottom Text'
                     onChange={this.handleChange}
                   />
@@ -128,21 +179,21 @@ class App extends React.Component {
                   <input 
                     type='color'
                     name='bottomColor'
-                    value={this.state.bottomColor}
+                    value={this.state.meme.bottomColor}
                     onChange={this.handleChange}
                   />
                 </label>
               </div>
 
-              <button className='button'>Save Meme</button>
+              <button className='button' onClick={this.saveMeme}>Save Meme</button>
 
             </form>
           </div>
 
-          <div id='savedList'>
+          <div id='savedListContainer'>
               <h1>Saved Memes</h1>
-              <ul>
-
+              <ul id='savedList'>
+                {memeComponents}
               </ul>
             </div>
         </div>
@@ -165,7 +216,7 @@ class App extends React.Component {
                     type='text'
                     name='topText'
                     className='inputBox'
-                    value={this.state.topText}
+                    value={this.state.meme.topText}
                     maxLength='45'
                     placeholder='Top Text'
                     onChange={this.handleChange}
@@ -175,7 +226,7 @@ class App extends React.Component {
                   <input 
                     type='color'
                     name='topColor'
-                    value={this.state.topColor}
+                    value={this.state.meme.topColor}
                     onChange={this.handleChange}
                   />
                 </label>
@@ -187,7 +238,7 @@ class App extends React.Component {
                     type='text'
                     name='bottomText'
                     className='inputBox'
-                    value={this.state.bottomText}
+                    value={this.state.meme.bottomText}
                     maxLength='45'
                     placeholder='Bottom Text'
                     onChange={this.handleChange}
@@ -197,7 +248,7 @@ class App extends React.Component {
                   <input 
                     type='color'
                     name='bottomColor'
-                    value={this.state.bottomColor}
+                    value={this.state.meme.bottomColor}
                     onChange={this.handleChange}
                   />
                 </label>

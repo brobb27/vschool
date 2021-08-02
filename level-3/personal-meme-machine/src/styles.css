@@ -6,19 +6,19 @@
 body {
 	background-color: #263238;
 	color: #d8c17a;
-	margin: 0rem 4rem;
+	margin: 0rem auto;
 }
 
 #title {
 	font-family: "Noto Sans", sans-serif;
 	font-weight: bolder;
 	height: 5rem;
-	margin: 2rem 8rem;
+	margin: 2rem 12rem;
 	letter-spacing: 0.2rem;
 	background-color: #263238;
 	color: #d8c17a;
 	text-align: center;
-	border-bottom: double 1px #d8c17a;
+	border-bottom: solid 1px #d8c17a;
 	padding-bottom: 2rem;
 	display: flex;
 	justify-content: center;
@@ -30,7 +30,7 @@ body {
 
 #creationContainer {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 }
 
 /* Loading meme container */
@@ -63,14 +63,14 @@ body {
 #topText {
 	position: relative;
 	bottom: 27.75rem;
-	max-width: 29.7rem;
+	max-width: 30rem;
 	font-size: 1.6rem;
 }
 
 #bottomText {
 	position: relative;
 	bottom: 5rem;
-	max-width: 29.7rem;
+	max-width: 30rem;
 	font-size: 1.6rem;
 }
 
@@ -146,7 +146,29 @@ body {
 	cursor: pointer;
 }
 
-#savedList {
+#savedListContainer {
 	text-align: center;
 	margin-bottom: 7rem;
+}
+
+/* Saved meme styles */
+
+.savedMemeItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 2rem 1rem;
+}
+
+.savedMemeItem > img {
+	height: 29rem;
+	width: 33rem;
+	border-radius: 5%;
+}
+
+#savedMemeButtons > button {
+	margin: 0rem 2rem;
+	position: relative;
+	bottom: 2rem;
 }
