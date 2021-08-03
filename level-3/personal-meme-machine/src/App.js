@@ -8,9 +8,9 @@ class App extends React.Component {
     this.state = {
       meme: {
         topText: '',
-        topColor: '#000000',
+        topColor: '#ffffff',
         bottomText: '',
-        bottomColor: '#000000',
+        bottomColor: '#ffffff',
         img: '',
         id: '',
         isEditing: false
@@ -157,7 +157,7 @@ class App extends React.Component {
                     name='topText'
                     className='inputBox'
                     value={this.state.meme.topText}
-                    maxLength='43'
+                    maxLength='32'
                     placeholder='Top Text'
                     onChange={this.handleChange}
                   />
@@ -179,7 +179,7 @@ class App extends React.Component {
                     name='bottomText'
                     className='inputBox'
                     value={this.state.meme.bottomText}
-                    maxLength='43'
+                    maxLength='32'
                     placeholder='Bottom Text'
                     onChange={this.handleChange}
                   />
@@ -193,9 +193,9 @@ class App extends React.Component {
                   />
                 </label>
               </div>
-
-              <button className='button' onClick={this.saveMeme}>Save Meme</button>
-
+              <div>
+                <button className='button' onClick={this.saveMeme}>Save Meme</button>
+              </div>
             </form>
           </div>
 

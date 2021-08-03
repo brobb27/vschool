@@ -95,6 +95,7 @@ class SavedMeme extends React.Component {
                             placeholder='New Top Text'
                             name='newTopText'
                             className='inputBox'
+                            maxLength='32'
                             onChange= {this.handleChange}
                         />
                         <input 
@@ -103,6 +104,7 @@ class SavedMeme extends React.Component {
                             placeholder='New Bottom Text'
                             name='newBottomText'
                             className='inputBox'
+                            maxLength='32'
                             onChange={this.handleChange}
                         />
                         <button className='button' onClick={this.handleSaveChanges}>

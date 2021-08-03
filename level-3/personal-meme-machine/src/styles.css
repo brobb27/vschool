@@ -7,13 +7,15 @@ body {
 	background-color: #263238;
 	color: #d8c17a;
 	margin: 0rem auto;
+	font-family: "Poppins", sans-serif;
 }
 
 #title {
 	font-family: "Noto Sans", sans-serif;
 	font-weight: bolder;
+	font-size: 2.3rem;
 	height: 5rem;
-	margin: 2rem 12rem;
+	margin: 2.5rem 12rem 2rem 12rem;
 	letter-spacing: 0.2rem;
 	background-color: #263238;
 	color: #d8c17a;
@@ -31,6 +33,8 @@ body {
 #creationContainer {
 	display: flex;
 	justify-content: space-evenly;
+	margin-bottom: -2.5rem;
+	margin-top: 3.5rem;
 }
 
 /* Loading meme container */
@@ -44,9 +48,9 @@ body {
 #memeContainer {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-items: center;
-	margin: 2rem 1rem;
+	padding-right: 1rem;
 }
 
 #memeContainer > img {
@@ -57,21 +61,23 @@ body {
 
 #memeContainer > button {
 	position: relative;
-	bottom: 2rem;
+	bottom: 5.5rem;
 }
 
 #topText {
 	position: relative;
-	bottom: 27.75rem;
-	max-width: 30rem;
-	font-size: 1.6rem;
+	bottom: 28.3rem;
+	max-width: 32rem;
+	font-size: 2.1rem;
+	font-family: "Mukta", sans-serif;
 }
 
 #bottomText {
 	position: relative;
-	bottom: 5rem;
-	max-width: 30rem;
-	font-size: 1.6rem;
+	bottom: 7.5rem;
+	max-width: 32rem;
+	font-size: 2.1rem;
+	font-family: "Mukta", sans-serif;
 }
 
 #memeHeader {
@@ -83,26 +89,22 @@ body {
 #memeForm {
 	position: relative;
 	right: 4%;
+	bottom: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
+	padding: 3.5rem 0rem 9rem 0rem;
 }
 
 #memeForm > div {
 	display: flex;
 	flex-direction: column;
-	margin-top: -2rem;
-	margin-bottom: -2rem;
+	justify-content: center;
 }
 
 #memeForm > div > label {
 	font-size: 1.2rem;
-}
-
-#memeForm > button {
-	position: relative;
-	bottom: 1rem;
 }
 
 .inputBox {
@@ -133,7 +135,7 @@ body {
 	all: unset;
 	border: none;
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	background-color: #d8c17a;
 	color: #1c2529;
 	height: 3rem;
@@ -152,6 +154,12 @@ body {
 	margin-bottom: 7rem;
 }
 
+#savedListContainer > h1 {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 2.3rem;
+	margin-bottom: 1.5rem;
+}
+
 /* Saved meme styles */
 
 .savedMemeItem {
@@ -159,7 +167,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 2rem 1rem;
+	margin-bottom: -2rem;
 }
 
 .savedMemeItem > img {
@@ -171,7 +179,7 @@ body {
 #savedMemeButtons > button {
 	margin: 0rem 2rem;
 	position: relative;
-	bottom: 2rem;
+	bottom: 5.5rem;
 }
 
 /* Save form styles */
@@ -184,7 +192,7 @@ body {
 
 #saveForm > button {
 	position: relative;
-	bottom: 2rem;
+	bottom: 5.5rem;
 	margin: 0rem 1rem;
 	width: 9.35rem;
 }
@@ -192,7 +200,7 @@ body {
 #saveForm > input {
 	all: unset;
 	position: relative;
-	bottom: 2rem;
+	bottom: 5.5rem;
 	text-align: left;
 	cursor: auto;
 	margin: 0rem 1rem;
