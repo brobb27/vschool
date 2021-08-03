@@ -12,7 +12,8 @@ class App extends React.Component {
         bottomText: '',
         bottomColor: '#000000',
         img: '',
-        id: ''
+        id: '',
+        isEditing: false
       },
       loading: false,
       memeList: []
@@ -106,7 +107,7 @@ class App extends React.Component {
     this.getImg(e)
   }
 
-  // Deletes the meme from the saved list
+  // Delete method to remove the meme from the saved list
   handleDelete(id) {
     this.setState(prevState => {
       return {
@@ -115,10 +116,18 @@ class App extends React.Component {
     })
   }
 
+  // Edit method to allow the user to update a saved meme
+
   render() {
     const topTextcolor = { color: this.state.meme.topColor }
     const bottomTextColor = { color: this.state.meme.bottomColor }
-    const memeComponents = this.state.memeList.map(memeObject => <SavedMeme key={memeObject.id} meme={memeObject} delete={ this.handleDelete }/>)
+    const memeComponents = this.state.memeList.map(memeObject => 
+      <SavedMeme 
+        key={memeObject.id} 
+        meme={memeObject} 
+        delete={ this.handleDelete }
+      />
+      )
     
     if (this.state.loading === false) {
       return(

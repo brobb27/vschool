@@ -115,6 +115,7 @@ body {
 	padding-left: 0.5rem;
 	border: none;
 	background-color: #4d6470;
+	color: rgba(245, 245, 245, 0.76);
 }
 
 .inputBox::placeholder {
@@ -171,4 +172,41 @@ body {
 	margin: 0rem 2rem;
 	position: relative;
 	bottom: 2rem;
+}
+
+/* Save form styles */
+
+#saveForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#saveForm > button {
+	position: relative;
+	bottom: 2rem;
+	margin: 0rem 1rem;
+	width: 9.35rem;
+}
+
+#saveForm > input {
+	all: unset;
+	position: relative;
+	bottom: 2rem;
+	text-align: left;
+	cursor: auto;
+	margin: 0rem 1rem;
+	font-size: 1.2rem;
+	height: 3rem;
+	width: 9.35rem;
+	border-radius: 8%;
+	padding-left: 0.5rem;
+	border: none;
+	background-color: #4d6470;
+	color: rgba(245, 245, 245, 0.76);
+}
+
+#saveForm > input::placeholder {
+	font-size: 1.2rem;
+	color: rgb(172, 172, 172);
 }
