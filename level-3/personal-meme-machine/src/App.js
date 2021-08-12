@@ -94,9 +94,9 @@ class App extends React.Component {
       return {
         meme: {
           topText: '',
-          topColor: '#000000',
+          topColor: '#ffffff',
           bottomText: '',
-          bottomColor: '#000000',
+          bottomColor: '#ffffff',
           img: '',
           id: ''
         },
@@ -115,8 +115,7 @@ class App extends React.Component {
       }
     })
   }
-
-  // Edit method to allow the user to update a saved meme
+  
 
   render() {
     const topTextcolor = { color: this.state.meme.topColor }
