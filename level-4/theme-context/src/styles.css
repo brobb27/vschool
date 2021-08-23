@@ -1,0 +1,151 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* theme context */
+
+.lightTheme {
+	color: rgb(27, 27, 27);
+	background-color: rgb(216, 216, 216);
+}
+
+.darkTheme {
+	color: rgb(216, 216, 216);
+	background-color: rgb(27, 27, 27);
+}
+
+.lightMain {
+	background-color: white;
+}
+
+.darkMain {
+	background-color: gray;
+}
+
+/* grid layout */
+
+#bodyGrid {
+	display: grid;
+	grid-template-rows: 0.65fr 2.9fr 1fr;
+}
+
+/* all navbar styles */
+
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+	font-weight: bolder;
+	letter-spacing: 0.03rem;
+}
+
+#navbarLinks {
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+	font-size: 0.8rem;
+}
+
+#navbarTitle {
+	all: unset;
+	font-size: 1.3rem;
+	transition-duration: 0.5s;
+	letter-spacing: 0.18rem;
+}
+#navbarTitle:hover {
+	cursor: pointer;
+	color: rgb(206, 206, 206);
+}
+
+.navbarLink {
+	all: unset;
+	transition-duration: 0.2s;
+}
+
+.navbarLink:hover {
+	cursor: pointer;
+	color: rgb(206, 206, 206);
+}
+
+/* main styles */
+
+#main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* footer styles */
+
+#footer {
+	padding: 3rem 0rem;
+}
+
+#footer > p {
+	text-align: center;
+	color: #5b5c5c;
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 1rem;
+	margin-top: 0rem;
+}
+
+/* all icon styles */
+
+#icons {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0rem;
+}
+
+#icons > div {
+	background-color: rgb(27, 27, 27);
+	margin: 0rem 1rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+#icons > div > a {
+	all: unset;
+	display: flex;
+	color: whitesmoke;
+	font-size: 2rem;
+}
+
+#icons > div:hover {
+	cursor: pointer;
+	background-color: rgb(100, 100, 100);
+}
+
+#icons > div > a:hover {
+	cursor: pointer;
+}
+
+/* button styles */
+
+#toggleButton {
+	border: unset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bolder;
+	font-size: 1.2rem;
+	height: 3rem;
+	width: 10rem;
+	border-radius: 10%;
+	transition: 0.4s;
+}
+
+#toggleButton:hover {
+	cursor: pointer;
+	background-color: rgb(77, 77, 77);
+}
