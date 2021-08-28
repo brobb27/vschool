@@ -1,4 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+// CONTINUE TO REFACTOR
+
+// function SavedMeme(props) {
+//     const [isEditing, setEdit] = useState(false)
+//     const [newText, setText] = useState({newTopText: '', newBottomText: ''})
+
+//     // Allows the user to edit and save input
+//     function toggleEdit() {
+//         setEdit(prevState => !prevState)
+//     }
+
+//     // Allows the user to change text
+//     function handleChange(e) {
+//         const {name, value} = e.target
+//         setText(prevText => {
+//             return {
+//                 ...prevText,
+//                 [name]: value
+//             }
+//         })
+//     }
+
+// }
 
 class SavedMeme extends React.Component {
     constructor() {

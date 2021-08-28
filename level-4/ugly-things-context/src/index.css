@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #798a65;
+	color: #faf3df;
+	font-family: "Lato", sans-serif;
+	text-align: center;
+}
+
+#app > h2 {
+	margin: 2rem 1rem 1.5rem 1rem;
+	font-size: 2rem;
+}
+
+#header {
+	padding: 1.5rem;
+	letter-spacing: 0.2rem;
+	background-color: rgb(51, 51, 51);
+}
+
+/* top form styles */
+
+#firstForm {
+	padding: 1rem 0rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+#firstForm > input {
+	font-size: 1rem;
+	border: unset;
+	border-radius: 10%;
+	background-color: #faf3df;
+	color: #798a65;
+	margin: 0.5rem;
+	padding: 0rem 0.5rem;
+	height: 2.7rem;
+	width: 12rem;
+}
+
+#firstForm > input:focus {
+	outline: none;
+}
+
+#firstForm > textarea {
+	font-size: 1rem;
+	resize: none;
+	border: unset;
+	border-radius: 10%;
+	background-color: #faf3df;
+	color: #798a65;
+	margin: 0.5rem;
+	padding: 0.5rem 0.5rem;
+	height: 5rem;
+	width: 12rem;
+}
+
+#firstForm > textarea:focus {
+	outline: none;
+}
+
+#firstForm > button {
+	border: none;
+	font-size: 1.1rem;
+	border-radius: 10%;
+	color: #798a65;
+	background-color: #f7e6b8;
+	margin: 0.5rem;
+	height: 2.5rem;
+	width: 10rem;
+	transition: 0.3s;
+}
+
+#firstForm > button:hover {
+	cursor: pointer;
+	background-color: #d6c8a3;
+}
+
+/* styles for savedList */
+
+#uglyList {
+	padding: 1rem 0rem;
+}
+
+#uglyListTitle > h1 {
+	font-size: 2.3rem;
+}
+
+/* styles for savedThing */
+
+.uglyThing {
+	margin: 1.5rem 0rem;
+}
+
+.uglyThing > img {
+	height: 13rem;
+	width: 15rem;
+	border-radius: 5%;
+}
