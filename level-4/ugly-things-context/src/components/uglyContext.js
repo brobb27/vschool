@@ -5,8 +5,6 @@ const UglyContext = React.createContext()
 function UglyContextProvider(props) {
     // State handlers
     const [savedList, setSavedList] = useState([])
-    const [, setEdit] = useState(false)
-    const [postMade, setPostMade] = useState(1)
 
     // Get request to thing API
     function getList() {
@@ -20,20 +18,26 @@ function UglyContextProvider(props) {
         e.preventDefault()
         axios.post('https://api.vschool.io/blairrobbins/thing', item)
             .then(() => getList())
+            .catch((err) => console.log(err))
         setState({title: '', imgUrl: '', description: ''})
-        setPostMade(prevCount => prevCount + 1)
     }
 
-    function edit() {
+    // Put request to thing API
+    function update(e, itemId, itemInfo) {
+        e.preventDefault()
+        axios.put(`https://api.vschool.io/blairrobbins/thing/${itemId}`, itemInfo)
+            .then(() => getList())
+            .catch((err) => console.log(err))
+        console.log(itemId)
+
+    }
+
+    function test() {
         console.log(savedList)
     }
 
-    function toggleEdit() {
-        setEdit(prevState => !prevState)
-    }
-
     return (
-        <UglyContext.Provider value={{submit, toggleEdit, edit, savedList, setSavedList, getList, postMade}}>
+        <UglyContext.Provider value={{submit, test, savedList, setSavedList, getList, update}}>
             {props.children}
         </UglyContext.Provider>
     )

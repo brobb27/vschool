@@ -11,21 +11,16 @@ body {
 	text-align: center;
 }
 
-#app > h2 {
-	margin: 2rem 1rem 1.5rem 1rem;
-	font-size: 2rem;
-}
-
 #header {
 	padding: 1.5rem;
 	letter-spacing: 0.2rem;
 	background-color: rgb(51, 51, 51);
 }
 
-/* top form styles */
+/* main form styles */
 
 #firstForm {
-	padding: 1rem 0rem;
+	padding: 2rem 0rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -71,7 +66,7 @@ body {
 	font-size: 1.1rem;
 	border-radius: 10%;
 	color: #798a65;
-	background-color: #f7e6b8;
+	background-color: #ffecbc;
 	margin: 0.5rem;
 	height: 2.5rem;
 	width: 10rem;
@@ -80,27 +75,163 @@ body {
 
 #firstForm > button:hover {
 	cursor: pointer;
-	background-color: #d6c8a3;
+	background-color: #f7e6b8;
+}
+
+/* edit form styles */
+
+#editForm {
+	display: grid;
+}
+
+#editForm > input {
+	margin: 0.3rem 0rem;
+	border: none;
+	border-radius: 5%;
+	height: 1.5rem;
+	padding: 0rem 0.3rem;
+	background-color: #f8f6ee;
+	color: #798a65;
+}
+
+#editForm > input:focus {
+	outline: none;
+}
+
+#editForm > textarea {
+	border: none;
+	border-radius: 5%;
+	resize: none;
+	height: 3.5rem;
+	padding: 0rem 0.3rem;
+	background-color: #f8f6ee;
+	color: #798a65;
+}
+
+#editForm > textarea:focus {
+	outline: none;
+}
+
+#editForm > button {
+	margin: 0.5rem 0rem;
+	border: none;
+	border-radius: 5%;
+	color: #f8f6ee;
+	background-color: #798a65;
+	height: 1.5rem;
+	transition: 0.3s;
+}
+
+#editForm > button:hover {
+	cursor: pointer;
+	background-color: #8ca173;
 }
 
 /* styles for savedList */
 
 #uglyList {
-	padding: 1rem 0rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 1rem 0rem 2rem;
+	background-color: #e7e0cd;
+	color: rgb(51, 51, 51);
 }
 
 #uglyListTitle > h1 {
+	color: #798a65;
 	font-size: 2.3rem;
+	font-weight: bolder;
+	margin: 1rem 0rem;
+	padding-bottom: 0.5rem;
+	border-bottom: solid 2px rgb(51, 51, 51);
 }
 
 /* styles for savedThing */
 
-.uglyThing {
-	margin: 1.5rem 0rem;
+.savedThing {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0.5rem 0rem;
 }
 
-.uglyThing > img {
+.savedThing > * {
+	padding: 0.25rem 0rem;
+}
+
+.savedThing > img {
 	height: 13rem;
 	width: 15rem;
 	border-radius: 5%;
+}
+
+.savedThing > div > button {
+	border: none;
+	font-size: 1rem;
+	border-radius: 10%;
+	color: #f7e6b8;
+	background-color: #798a65;
+	margin: 0.5rem;
+	height: 1.5rem;
+	width: 5rem;
+	transition: 0.3s;
+}
+
+.savedThing > div > button:hover {
+	cursor: pointer;
+	background-color: #8ca173;
+}
+
+/* footer styles */
+
+#footer {
+	padding: 3rem 0rem;
+	background-color: rgb(51, 51, 51);
+}
+
+#footer > p {
+	text-align: center;
+	color: #e7e0cd;
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 1rem;
+	margin-top: 0rem;
+}
+
+/* all icon styles */
+
+#icons {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0rem;
+}
+
+#icons > div {
+	background-color: #798a65;
+	margin: 0rem 1rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+#icons > div > a {
+	all: unset;
+	display: flex;
+	color: #e7e0cd;
+	font-size: 2rem;
+}
+
+#icons > div:hover {
+	cursor: pointer;
+	background-color: #8ca173;
+}
+
+#icons > div > a:hover {
+	cursor: pointer;
 }
