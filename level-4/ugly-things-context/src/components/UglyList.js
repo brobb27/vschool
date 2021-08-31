@@ -4,10 +4,9 @@ import { UglyContext } from './uglyContext'
 import axios from 'axios'
 
 function UglyList() {
-    const { savedList, postMade, setSavedList } = useContext(UglyContext)
+    const { savedList, setSavedList } = useContext(UglyContext)
 
     useEffect(() => {
-        console.log(`rendered ${postMade}`)
         axios.get('https://api.vschool.io/blairrobbins/thing')
             .then(res => setSavedList(() => [...res.data]))
             .catch(err => console.log(err))
@@ -20,7 +19,7 @@ function UglyList() {
     return (
         <div id='uglyList'>
             <div id='uglyListTitle'>
-                <h1>Ugly List</h1>
+                <h1>List of Uglyness</h1>
             </div>
             {savedComponents}
         </div>
