@@ -6,6 +6,7 @@ import axios from 'axios'
 function UglyList() {
     const { savedList, setSavedList } = useContext(UglyContext)
 
+    // Gets list when the page loads
     useEffect(() => {
         axios.get('https://api.vschool.io/blairrobbins/thing')
             .then(res => setSavedList(() => [...res.data]))
@@ -13,7 +14,7 @@ function UglyList() {
             // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    // Map and mount savedList
+    // Maps savedList and mounts SavedThing to UglyList
     const savedComponents = savedList.map(item => <SavedThing key={item._id} thing={item} />)
 
     return (

@@ -31,7 +31,7 @@ body {
 #firstForm > input {
 	font-size: 1rem;
 	border: unset;
-	border-radius: 10%;
+	border-radius: 7px;
 	background-color: #faf3df;
 	color: #798a65;
 	margin: 0.5rem;
@@ -48,7 +48,7 @@ body {
 	font-size: 1rem;
 	resize: none;
 	border: unset;
-	border-radius: 10%;
+	border-radius: 7px;
 	background-color: #faf3df;
 	color: #798a65;
 	margin: 0.5rem;
@@ -64,9 +64,9 @@ body {
 #firstForm > button {
 	border: none;
 	font-size: 1.1rem;
-	border-radius: 10%;
+	border-radius: 7px;
 	color: #798a65;
-	background-color: #ffecbc;
+	background-color: #ffecbce5;
 	margin: 0.5rem;
 	height: 2.5rem;
 	width: 10rem;
@@ -75,7 +75,7 @@ body {
 
 #firstForm > button:hover {
 	cursor: pointer;
-	background-color: #f7e6b8;
+	background-color: #fde39a;
 }
 
 /* edit form styles */
@@ -87,7 +87,7 @@ body {
 #editForm > input {
 	margin: 0.3rem 0rem;
 	border: none;
-	border-radius: 5%;
+	border-radius: 7px;
 	height: 1.5rem;
 	padding: 0rem 0.3rem;
 	background-color: #f8f6ee;
@@ -100,7 +100,7 @@ body {
 
 #editForm > textarea {
 	border: none;
-	border-radius: 5%;
+	border-radius: 7px;
 	resize: none;
 	height: 3.5rem;
 	padding: 0rem 0.3rem;
@@ -115,7 +115,7 @@ body {
 #editForm > button {
 	margin: 0.5rem 0rem;
 	border: none;
-	border-radius: 5%;
+	border-radius: 7px;
 	color: #f8f6ee;
 	background-color: #798a65;
 	height: 1.5rem;
@@ -161,16 +161,20 @@ body {
 	padding: 0.25rem 0rem;
 }
 
+.savedThing > p {
+	width: 15rem;
+}
+
 .savedThing > img {
 	height: 13rem;
 	width: 15rem;
-	border-radius: 5%;
+	border-radius: 15px;
 }
 
 .savedThing > div > button {
 	border: none;
 	font-size: 1rem;
-	border-radius: 10%;
+	border-radius: 7px;
 	color: #f7e6b8;
 	background-color: #798a65;
 	margin: 0.5rem;
@@ -213,7 +217,7 @@ body {
 	margin: 0rem 1rem;
 	width: 3rem;
 	height: 3rem;
-	border-radius: 50%;
+	border-radius: 70%;
 	display: flex;
 	align-items: center;
 	justify-content: center;

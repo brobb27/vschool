@@ -15,6 +15,7 @@ function SavedThing(props) {
             .catch(err => console.log(err));
     }
 
+    // Changes the editing state
     function toggleEdit() {
         setEdit(prevState => !prevState)
     }

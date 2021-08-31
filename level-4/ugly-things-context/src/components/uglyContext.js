@@ -3,7 +3,7 @@ import axios from 'axios'
 const UglyContext = React.createContext()
 
 function UglyContextProvider(props) {
-    // State handlers
+    // State handler
     const [savedList, setSavedList] = useState([])
 
     // Get request to thing API
@@ -28,8 +28,7 @@ function UglyContextProvider(props) {
         axios.put(`https://api.vschool.io/blairrobbins/thing/${itemId}`, itemInfo)
             .then(() => getList())
             .catch((err) => console.log(err))
-        console.log(itemId)
-
+        // console.log(itemId)
     }
 
     function test() {
