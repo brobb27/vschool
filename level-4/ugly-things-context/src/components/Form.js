@@ -5,11 +5,19 @@ import {UglyContext} from './uglyContext'
 
 function Form(props) {
     const { submit, update } = useContext(UglyContext)
-    const [productDetails, setDetails] = useState({title: '', description: '', imgUrl: ''})
 
-    //create a new state for the edit form so we can have the values via props?
-    //set conditionals on values to equal one or the other
+    // destructures props
+    const { defaultTitle, defaultDescription, defaultImg, itemId } = props
+
+    // sets the state as empty or sets it as the previous text
+    const [productDetails, setDetails] = 
+        useState(
+            props.isEditing === true ? 
+            {title: defaultTitle, description: defaultDescription, imgUrl: defaultImg} : 
+            {title: '', description: '', imgUrl: ''}
+        )
     
+    // handles changes of the input boxes
     function handleChange(e) {
         const {name, value} = e.target
 
@@ -21,37 +29,35 @@ function Form(props) {
         })
     }
     
-
     return (
         <div>
             <form 
                 id={props.descriptionId} 
-                onSubmit={ props.isEditing ? ((e) => {update(e, props.itemId, productDetails); props.toggleEdit()}) : ((e) => submit(e, productDetails, setDetails)) }
+                onSubmit={ props.isEditing ? ((e) => {update(e, itemId, productDetails); props.toggleEdit()}) : ((e) => submit(e, productDetails, setDetails)) }
             >
                 <input
                     type='text'
                     name='title'
                     placeholder='Title'
                     value={productDetails.title}
-                    // value={productDetails.title !== '' ? productDetails.title : props.defaultTitle}
                     onChange={handleChange}
-                    required={props.descriptionId === 'firstForm' ? true : false}
+                    required
                 />
                 <input
                     type='text'
                     name='imgUrl'
                     placeholder='Image URL'
-                    value={productDetails.imgUrl !== '' ? productDetails.imgUrl : props.defaultImg}
+                    value={productDetails.imgUrl}
                     onChange={handleChange}
-                    required={props.descriptionId === 'firstForm' ? true : false}
+                    required
                 />
                 <textarea
                     type='text'
                     name='description'
                     placeholder='Enter Description Here'
-                    value={productDetails.description !== '' ? productDetails.description : props.defaultDescription}
+                    value={productDetails.description}
                     onChange={handleChange}
-                    required={props.descriptionId === 'firstForm' ? true : false}
+                    required
                 />
                 {/* isEditing conditional */}
                 {props.isEditing ? <button>Update</button> : <button id='submit'>Submit</button>}
