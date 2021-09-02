@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* all navbar styles */
+
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 3rem;
+	font-weight: bolder;
+	letter-spacing: 0.03rem;
+}
+
+#navbarLinks {
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+	font-size: 0.8rem;
+}
+
+#navbarTitle {
+	all: unset;
+	font-size: 1.3rem;
+	transition-duration: 0.3s;
+	letter-spacing: 0.18rem;
+}
+
+#navbarTitle:hover {
+	cursor: pointer;
+	color: rgb(206, 206, 206);
+}
+
+.navbarLink {
+	all: unset;
+	transition-duration: 0.3s;
+}
+
+.navbarLink:hover {
+	cursor: pointer;
+	color: rgb(206, 206, 206);
+}
