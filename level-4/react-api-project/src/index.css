@@ -1,0 +1,93 @@
+/* styles for Magic Ate Ball */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#main::before {
+	content: "";
+	background-image: url(https://t3.ftcdn.net/jpg/01/30/29/88/360_F_130298889_QQ54mUCU4Q6OsM5ZKdHXgviav9WWckrt.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.8;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	height: 100%;
+	z-index: -1;
+}
+
+/* all navbar styles */
+
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem 3.5rem;
+	font-weight: bolder;
+	color: white;
+	letter-spacing: 0.03rem;
+	background-color: rgb(44, 44, 44);
+}
+
+#navbarTitle {
+	all: unset;
+	font-size: 1.3rem;
+	transition-duration: 0.5s;
+	letter-spacing: 0.1rem;
+	padding: 1rem 0rem;
+}
+
+#navbarTitle:hover {
+	cursor: pointer;
+	color: rgb(206, 206, 206);
+}
+
+#navbarLinks {
+	display: flex;
+	justify-content: space-around;
+	width: 60%;
+	font-size: 0.4rem;
+}
+
+.navbarLink {
+	all: unset;
+	transition-duration: 0.2s;
+}
+
+.navbarLink:hover {
+	cursor: pointer;
+	color: rgb(206, 206, 206);
+}
+
+/* all home styles */
+
+#home {
+	padding: 2rem 0rem;
+	color: white;
+}
+
+/* all form styles */
+
+#userForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem 0rem;
+}
+
+/* all home list styles */
+
+.homeList {
+	background-color: white;
+	color: black;
+}
