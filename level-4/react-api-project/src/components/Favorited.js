@@ -11,15 +11,14 @@ function Favorited(props) {
     }
 
     return (
-        <div>
+        <div id='favoritedVenue'>
             <h2>{props.venue.name}</h2>
-            <img src={props.venue.photoUrl} alt='Our Venue'/>
-            <p>Description: {props.venue.description}</p>
-            <p>Phone: {props.venue.phone}</p>
-            <p>Address: {props.venue.address}</p>
-            <p>Hours: {props.venue.hours}</p>
-            <p>Price Scale: {props.venue.price}</p>
-            <p>{props.venue.id}</p>
+            <img src={props.venue.photoUrl} alt='Our Venue' className='detailImg'/>
+            <p><b>Description:</b> {props.venue.description}</p>
+            <p><b>Phone:</b> {props.venue.phone}</p>
+            <p><b>Address:</b> {props.venue.address}</p>
+            <p><b>Hours:</b> {props.venue.hours}</p>
+            <p><b>Price Scale:</b> {props.venue.price}</p>
             <button onClick={remove}>Remove From Favorites</button>
         </div>
     )
