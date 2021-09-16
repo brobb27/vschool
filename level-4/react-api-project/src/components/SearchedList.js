@@ -6,8 +6,11 @@ function SearchedList() {
     // Context info
     const { venueList } = useContext(ContextInfo)
 
+    // valid restaurants
+    const validList = venueList.filter(item => item.categories.length > 0)
+
     // Filters result to only show restaurants or food
-    const newList = venueList.filter(item => {
+    const newList = validList.filter(item => {
         const type = item.categories[0].name
         
         // Conditional statement to make sure the name of the venue
@@ -16,6 +19,8 @@ function SearchedList() {
         } else if (type.indexOf('Food') > -1) {
             return true
         } else if (type.indexOf('Joint') > -1) {
+            return true
+        } else if (type.indexOf('Steakhouse') > -1) {
             return true
         } 
         else {
