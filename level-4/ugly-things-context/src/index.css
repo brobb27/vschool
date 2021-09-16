@@ -12,7 +12,7 @@ body {
 }
 
 #header {
-	padding: 1.5rem;
+	padding: 2.5rem 1.5rem;
 	letter-spacing: 0.2rem;
 	background-color: rgb(51, 51, 51);
 }
@@ -136,6 +136,7 @@ body {
 	padding: 1rem 0rem 2rem;
 	background-color: #e7e0cd;
 	color: rgb(51, 51, 51);
+	min-height: 15rem;
 }
 
 #uglyListTitle > h1 {

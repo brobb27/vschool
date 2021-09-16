@@ -5,7 +5,7 @@ import { ContextInfo } from './contextInfo'
 
 function DetailPage(props) {
     // Using hooks to retreive necessary information for my AJAX call
-    const { clientIdSquare, clientSecretSquare, favoritesList, setFavoriteList } = useContext(ContextInfo)
+    const { clientIdSquare, clientSecretSquare, setFavoriteList } = useContext(ContextInfo)
     const { venueId } = useParams()
 
     // Using state to store my data
@@ -48,8 +48,6 @@ function DetailPage(props) {
         )
     }
 
-    console.log(favoritesList)
-
     // Destructuring JSON objects
     const { name, contact, location, page, hours, price, photos } = info
 
@@ -59,14 +57,18 @@ function DetailPage(props) {
             <h1>Loading...</h1> : 
             <>
                 <h1>Restaurant Details</h1>
-                <h2>{name}</h2>
-                <img src={photos.count === 0 ? '' : `${photos.groups[0].items[0].prefix}original${photos.groups[0].items[0].suffix}`} alt='Our Venue' className='detailImg'/>
-                <p>Description: {page && page.pageInfo !== false ? page.pageInfo.description : 'No description available'}</p>
-                <p>Phone: {contact.formattedPhone !== undefined ? contact.formattedPhone : contact.phone || 'No phone number available' }</p>
-                <p>Address: {location !== undefined ? `${location.address}, ${location.city}, ${location.state} ${location.postalCode}` : 'No Address Available'}</p>
-                <p>Hours: {hours !== undefined ? hours.status : 'Not Available'}</p>
-                <p>Price Scale: {price !== undefined ? price.message : 'Not Available'}</p>
-                <button onClick={favorite}>Add to Favorites</button>
+                <div>
+                    <h2>{name}</h2>
+                    <img src={photos.count === 0 ? 'https://www.chaparralpharmacy.ca/wp-content/themes/apexclinic/images/no-image/No-Image-Found-400x264.png' : `${photos.groups[0].items[0].prefix}original${photos.groups[0].items[0].suffix}`} alt='Our Venue' className='detailImg'/>
+                    <div>
+                        <p><b>Description:</b> {page && page.pageInfo !== false ? page.pageInfo.description : 'No description available'}</p>
+                        <p><b>Phone:</b> {contact.formattedPhone !== undefined ? contact.formattedPhone : contact.phone || 'No phone number available' }</p>
+                        <p><b>Address:</b> {location !== undefined ? `${location.address}, ${location.city}, ${location.state} ${location.postalCode}` : 'No Address Available'}</p>
+                        <p><b>Hours:</b> {hours !== undefined ? hours.status : 'Not Available'}</p>
+                        <p><b>Price Scale:</b> {price !== undefined ? price.message : 'Not Available'}</p>
+                    </div>
+                </div>
+                <button onClick={favorite} >Add to Favorites</button>
             </>}
         </div>
     )

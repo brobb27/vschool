@@ -7,9 +7,9 @@ function FavoritesList() {
     const { favoritesList } = useContext(ContextInfo)
 
     // Favorited components
-    const FavoritedComponents = favoritesList.map(item => <Favorited key={item.phone} venue={item}/>)
+    const FavoritedComponents = favoritesList.map(item => <Favorited key={item.id} venue={item}/>)
 
-    
+
 
     return (
         <div id='favoritesList'>

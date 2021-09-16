@@ -8,6 +8,13 @@
 	font-family: "Roboto", sans-serif;
 }
 
+/* main div styles */
+#main {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 /* all navbar styles */
 
 #navbar {
@@ -130,8 +137,12 @@
 .detailComponent {
 	padding: 2rem 0rem;
 	border-bottom: dotted #999999b0 0.5rem;
-	width: 75%;
+	max-width: 20rem;
 	line-height: 1.3rem;
+}
+
+.detailComponent > * {
+	margin: 0.3rem 0rem;
 }
 
 .detailComponent > a > h2 {
@@ -149,26 +160,105 @@
 /* Detail page styles */
 
 #detailPage {
-	padding-top: 8rem;
+	padding-top: 8.5rem;
+	margin: 0rem 1.5rem 2rem;
+}
+
+#detailPage > h1 {
+	font-size: 1.5rem;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+#detailPage > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0.8rem 0rem;
+}
+
+#detailPage > div > h2 {
+	font-size: 1.8rem;
+}
+
+#detailPage > div > * {
+	margin: 0.3rem 0rem;
 }
 
 .detailImg {
-	height: 20rem;
-	width: 20rem;
+	height: 15.5rem;
+	width: 15.5rem;
 	border-radius: 1rem;
+}
+
+#detailPage > button {
+	border: none;
+	border-radius: 7px;
+	color: #f8f6ee;
+	background-color: #911f27;
+	height: 2.3rem;
+	width: 9rem;
+	transition: 0.3s;
+	font-size: 0.9rem;
+}
+
+#detailPage > button:hover {
+	background-color: #ad2831;
+	cursor: pointer;
 }
 
 /* Favorites list styles */
 
 #favoritesList {
-	padding-top: 8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 8.5rem;
+	padding-bottom: 1.5rem;
+	margin: 0rem 1.5rem;
+}
+
+#favoritesList > h1 {
+	font-size: 1.5rem;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+#favoritedVenue {
+	margin: 1rem 0rem;
+}
+
+#favoritedVenue > h2 {
+	font-size: 1.6rem;
+}
+
+#favoritedVenue > * {
+	margin: 0.2rem 0rem;
+}
+
+#favoritedVenue > button {
+	border: none;
+	border-radius: 7px;
+	color: #f8f6ee;
+	background-color: #911f27;
+	height: 2.3rem;
+	width: 11rem;
+	transition: 0.3s;
+	font-size: 0.9rem;
+}
+
+#favoritedVenue > button:hover {
+	background-color: #ad2831;
+	cursor: pointer;
 }
 
 /* FOOTER styles */
 
 #footer {
-	padding: 2.5rem 0rem;
+	padding: 2rem 0rem;
 	background-color: #444444;
+	margin-top: auto;
 }
 
 #footer > p {
@@ -278,5 +368,30 @@
 	#topSection > h2 {
 		padding: 1rem 0rem 2rem;
 		font-size: 3.2rem;
+	}
+
+	/* Detail page media queries */
+	#detailPage > h1 {
+		font-size: 1.8rem;
+	}
+
+	.detailImg {
+		height: 23rem;
+		width: 23rem;
+		border-radius: 1rem;
+	}
+
+	/* Favorite List media queries */
+
+	#favoritesList {
+		padding-top: 6.5rem;
+	}
+
+	#favoritesList > h1 {
+		font-size: 1.8rem;
+	}
+
+	#favoritedVenue > h2 {
+		font-size: 1.8rem;
 	}
 }
