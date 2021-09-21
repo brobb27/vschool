@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { ContextInfo } from './contextInfo'
 
-function DetailPage(props) {
+function DetailPage() {
     // Using hooks to retreive necessary information for my AJAX call
     const { clientIdSquare, clientSecretSquare, setFavoriteList } = useContext(ContextInfo)
     const { venueId } = useParams()
@@ -25,6 +25,9 @@ function DetailPage(props) {
         .catch(err => console.log(err))
     }
 
+    // Destructuring JSON objects
+    const { name, contact, location, page, hours, price, photos, menu } = info
+
     // useEffect as componenet did mount
     useEffect(() => {
         getDetails()
@@ -37,7 +40,8 @@ function DetailPage(props) {
             [...prevList, {
                     name, 
                     photoUrl: photos.count === 0 ? '' : `${photos.groups[0].items[0].prefix}original${photos.groups[0].items[0].suffix}`,
-                    description: page && page.pageInfo !== false ? page.pageInfo.description : 'No description available',
+                    menu: menu !== undefined ? menu.mobileUrl : 'No menu available',
+                    description: page && page.pageInfo !== undefined ? page.pageInfo.description : 'No description available',
                     phone: contact.formattedPhone !== undefined ? contact.formattedPhone : contact.phone || 'No phone number available',
                     address: location !== undefined ? `${location.address}, ${location.city}, ${location.state} ${location.postalCode}` : 'No Address Available',
                     hours: hours !== undefined ? hours.status : 'Not Available',
@@ -46,10 +50,20 @@ function DetailPage(props) {
                 }
             ]
         )
+        alert(`${name}, has been added to your favorites list!`)
     }
 
-    // Destructuring JSON objects
-    const { name, contact, location, page, hours, price, photos } = info
+    // conditional statement for detail descriptions
+    // function descriptionAvailable() {
+    //     if (page || page.info !== undefined) {
+    //         return page.pageInfo.description
+    //     } else {
+    //         return 'No description available'
+    //     }
+    // }
+
+    // {page && page.pageInfo !== false ? page.pageInfo.description : 'No description available'}
+
 
     return (
         <div id='detailPage'>
@@ -61,14 +75,15 @@ function DetailPage(props) {
                     <h2>{name}</h2>
                     <img src={photos.count === 0 ? 'https://www.chaparralpharmacy.ca/wp-content/themes/apexclinic/images/no-image/No-Image-Found-400x264.png' : `${photos.groups[0].items[0].prefix}original${photos.groups[0].items[0].suffix}`} alt='Our Venue' className='detailImg'/>
                     <div>
-                        <p><b>Description:</b> {page && page.pageInfo !== false ? page.pageInfo.description : 'No description available'}</p>
+                        <p><b>Description:</b> {page && page.pageInfo !== undefined ? page.pageInfo.description : 'No description available'}</p>
                         <p><b>Phone:</b> {contact.formattedPhone !== undefined ? contact.formattedPhone : contact.phone || 'No phone number available' }</p>
                         <p><b>Address:</b> {location !== undefined ? `${location.address}, ${location.city}, ${location.state} ${location.postalCode}` : 'No Address Available'}</p>
                         <p><b>Hours:</b> {hours !== undefined ? hours.status : 'Not Available'}</p>
                         <p><b>Price Scale:</b> {price !== undefined ? price.message : 'Not Available'}</p>
+                        {menu !== undefined ? <p><b><a href={menu.mobileUrl} rel="noopener noreferrer" target='_blank'>Menu</a></b></p> : <p><b>No menu available</b></p>}
                     </div>
                 </div>
-                <button onClick={favorite} >Add to Favorites</button>
+                <button onClick={favorite}>Add to Favorites</button>
             </>}
         </div>
     )

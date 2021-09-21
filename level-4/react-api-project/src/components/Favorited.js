@@ -19,6 +19,7 @@ function Favorited(props) {
             <p><b>Address:</b> {props.venue.address}</p>
             <p><b>Hours:</b> {props.venue.hours}</p>
             <p><b>Price Scale:</b> {props.venue.price}</p>
+            {props.venue.menu !== 'No menu available' ? <p><b><a href={props.venue.menu} rel="noopener noreferrer" target='_blank'>Menu</a></b></p> : <p><b>No menu available</b></p>}
             <button onClick={remove}>Remove From Favorites</button>
         </div>
     )
