@@ -14,15 +14,17 @@ function UglyContextProvider(props) {
     }
 
     // Post request to thing API
+    // RESPONSE WILL HAVE THE OBJECT THAT YOU CAN ADD THE SAVED LIST INSTEAD OF MAKING ANOTHER GET REQUEST
     function submit(e, item, setState) {
         e.preventDefault()
         axios.post('https://api.vschool.io/blairrobbins/thing', item)
-            .then(() => getList())
+            .then(res => getList())
             .catch((err) => console.log(err))
         setState({title: '', imgUrl: '', description: ''})
     }
 
     // Put request to thing API
+    // RESPONSE WILL HAVE THE OBJECT THAT YOU CAN ADD THE SAVED LIST INSTEAD OF MAKING ANOTHER GET REQUEST
     function update(e, itemId, itemInfo) {
         e.preventDefault()
         axios.put(`https://api.vschool.io/blairrobbins/thing/${itemId}`, itemInfo)
