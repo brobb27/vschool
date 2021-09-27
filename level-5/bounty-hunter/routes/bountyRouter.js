@@ -4,7 +4,7 @@ const bountyRouter = express.Router()
 const { v4: uuid } = require('uuid')
 
 // Fake Data
-const bountyList = [
+let bountyList = [
     {firstName: 'Luke', lastName: 'Skywalker', isAlive: true, bounty: '$90000', type: 'jedi', _id: uuid()},
     {firstName: 'General', lastName: 'Juan', isAlive: true, bounty: '$40000', type: 'sith', _id: uuid()},
     {firstName: 'Hoe', lastName: 'Bee-one', isAlive: true, bounty: '$70000', type: 'jedi', _id: uuid()},
@@ -42,12 +42,20 @@ bountyRouter.post('/', (req, res) => {
 
 // put
 bountyRouter.put('/:bountyId', (req, res) => {
-    console.log(req)
+    const bountyId = req.params.bountyId
+    const itemEditing = bountyList.findIndex(person => person._id === bountyId)
+    const updatedPerson = Object.assign(bountyList[itemEditing], req.body)
+    res.send(updatedPerson)
+
 })
 
 // delete
-bountyRouter.delete('/bountyId', (req, res) => {
-    console.log(req)
+bountyRouter.delete('/:bountyId', (req, res) => {
+    const bountyId = req.params.bountyId
+    const filteredBounty = bountyList.filter(person => person._id !== bountyId)
+    // Use state would probably be safer, but this isn't react?
+    bountyList = filteredBounty
+    res.send(`You have successfully taken the bounty off their head!`)
 })
 
 // OR
