@@ -14,14 +14,14 @@ const inventory = [
 ]
 
 // get by type
-things.get('/', (req, res) => {
-    const type = req.query.type
+things.get('/:type', (req, res) => {
+    const type = req.params.type
     const filteredThings = inventory.filter(item => item.type === type)
     res.send(filteredThings)
 })
 
 // get by price
-things.get('/price', (req, res) => {
+things.get('/search/price', (req, res) => {
     const max = typeof req.query.max !== 'undefined' ? req.query.max : 1000000
     const min = typeof req.query.min !== 'undefined' ? req.query.min : 0
     const filteredThings = inventory.filter(item => item.price <= max && item.price >= min)
