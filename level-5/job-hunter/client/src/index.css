@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#app {
+	position: relative;
+	height: 100vh;
+}
+
+#contentWrap {
+	min-height: 12rem;
+	padding: 5.7rem 0rem;
+}
+
+/* all navbar styles */
+
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.8rem 0rem;
+	position: fixed;
+	width: 100%;
+	font-weight: bolder;
+	letter-spacing: 0.03rem;
+	background-color: #3f72af;
+	color: #f9f7f7;
+}
+
+#navbarLinks {
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+	font-size: 0.8rem;
+}
+
+#navbarTitle {
+	all: unset;
+	font-size: 1.8rem;
+	transition-duration: 0.5s;
+	letter-spacing: 0.18rem;
+	padding-left: 3rem;
+}
+#navbarTitle:hover {
+	cursor: pointer;
+	color: rgb(126, 126, 126);
+}
+
+.navbarLink {
+	all: unset;
+	transition-duration: 0.2s;
+}
+.navbarLink:hover {
+	cursor: pointer;
+	color: rgb(126, 126, 126);
+}
+
+/* top section styles */
+
+#topSection {
+	background-color: #f9f7f7;
+	padding: 3rem 0rem;
+}
+
+/* title styles */
+
+#titleSection {
+	max-width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+#titleSection > p {
+	padding-top: 0.5rem;
+	font-size: 0.9rem;
+}
+
+/* main form styles */
+
+.mainForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mainForm > * {
+	width: 12rem;
+	height: 2.3rem;
+	margin: 0.3rem 0rem;
+	border-radius: 7px;
+	border: solid 2px #3f72af;
+	padding-left: 0.2rem;
+	font-size: 1rem;
+}
+
+.mainForm > select {
+	width: 12.5rem;
+	height: 2.5rem;
+}
+
+.mainForm > button {
+	background-color: #112d4e;
+	color: #f9f7f7;
+	transition: 0.3s;
+	border: solid #112d4e 2px;
+}
+.mainForm > button:hover {
+	cursor: pointer;
+	background-color: #dbe2ef;
+	color: #112d4e;
+}
+
+#formCheck {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: white;
+}
+
+/* edit form styles */
+
+.editForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* job list styles */
+
+#jobListSection > h2 {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	text-decoration: underline;
+	padding: 1.5rem;
+}
+
+#jobList {
+	display: grid;
+	grid-auto-flow: dense;
+	grid-template-columns: 20rem 20rem;
+	border: 2px solid #112d4e;
+	border-radius: 7px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40rem;
+}
+
+#jobList > h3 {
+	border: 2px solid #112d4e;
+	border-top: 0;
+	border-radius: 5px;
+	padding: 1.5rem 0rem;
+	text-align: center;
+}
+
+.interested {
+	grid-column: 1 / 2;
+}
+
+.applied {
+	grid-column: 2 / 3;
+}
+
+#footer {
+	text-align: center;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+}
