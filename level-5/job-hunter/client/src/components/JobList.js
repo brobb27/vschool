@@ -30,8 +30,8 @@ function JobList() {
         <div id='jobListSection'>
             <h2>Your Jobs</h2>
             <div id='jobList'>
-                <h3>Interested</h3>
-                <h3>Applied</h3>
+                <h3 id='interestedTitle'>Interested</h3>
+                <h3 id='appliedTitle'>Applied</h3>
                 {jobComponents}
             </div>
         </div>
