@@ -6,11 +6,12 @@
 #app {
 	position: relative;
 	height: 100vh;
+	font-family: "Open Sans", sans-serif;
 }
 
 #contentWrap {
 	min-height: 12rem;
-	padding: 5.7rem 0rem;
+	padding-top: 5rem;
 }
 
 /* all navbar styles */
@@ -19,13 +20,14 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.8rem 0rem;
+	padding: 1.5rem 0rem;
 	position: fixed;
 	width: 100%;
 	font-weight: bolder;
 	letter-spacing: 0.03rem;
 	background-color: #3f72af;
 	color: #f9f7f7;
+	z-index: 1;
 }
 
 #navbarLinks {
@@ -44,7 +46,7 @@
 }
 #navbarTitle:hover {
 	cursor: pointer;
-	color: rgb(126, 126, 126);
+	color: rgb(192, 192, 192);
 }
 
 .navbarLink {
@@ -53,14 +55,14 @@
 }
 .navbarLink:hover {
 	cursor: pointer;
-	color: rgb(126, 126, 126);
+	color: rgb(192, 192, 192);
 }
 
 /* top section styles */
 
 #topSection {
 	background-color: #f9f7f7;
-	padding: 3rem 0rem;
+	padding: 2.5rem 0rem;
 }
 
 /* title styles */
@@ -88,7 +90,7 @@
 }
 
 .mainForm > * {
-	width: 12rem;
+	width: 12.5rem;
 	height: 2.3rem;
 	margin: 0.3rem 0rem;
 	border-radius: 7px;
@@ -98,7 +100,7 @@
 }
 
 .mainForm > select {
-	width: 12.5rem;
+	width: 13rem;
 	height: 2.5rem;
 }
 
@@ -130,34 +132,82 @@
 	align-items: center;
 }
 
+.editForm > * {
+	width: 12.5rem;
+	height: 1.5rem;
+	margin: 0.3rem 0rem;
+	border-radius: 7px;
+	border: solid 2px #3f72af;
+	padding-left: 0.2rem;
+	font-size: 1rem;
+}
+
+.editForm > select {
+	width: 13rem;
+	height: 1.7rem;
+}
+
+.editForm > button {
+	background-color: #194577cb;
+	color: #f9f7f7;
+	transition: 0.3s;
+	border: solid #194577cb 2px;
+	height: 1.8rem;
+}
+
+.editForm > button:hover {
+	cursor: pointer;
+	background-color: #dbe2ef;
+	color: #112d4e;
+}
+
 /* job list styles */
+
+#jobListSection {
+	background-color: #194577cb;
+	padding-bottom: 3rem;
+}
 
 #jobListSection > h2 {
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
-	text-decoration: underline;
 	padding: 1.5rem;
+	color: #f9f7f7;
+	font-size: 2rem;
 }
 
 #jobList {
 	display: grid;
 	grid-auto-flow: dense;
-	grid-template-columns: 20rem 20rem;
-	border: 2px solid #112d4e;
-	border-radius: 7px;
+	grid-template-columns: 23rem 23rem;
+	border: 0.2rem solid #202020;
+	border-radius: 1rem;
 	margin-left: auto;
 	margin-right: auto;
-	width: 40rem;
+	padding-bottom: 1rem;
+	width: 46rem;
+	background-color: #f9f7f7;
+	color: #202020;
 }
 
 #jobList > h3 {
-	border: 2px solid #112d4e;
-	border-top: 0;
-	border-radius: 5px;
+	border-bottom: 0.18rem solid #202020;
 	padding: 1.5rem 0rem;
+	margin-bottom: 0.5rem;
 	text-align: center;
+	font-size: 1.4rem;
 }
+
+#interestedTitle {
+	border-right: 0.1rem solid #202020;
+}
+
+#appliedTitle {
+	border-left: 0.1rem solid #202020;
+}
+
+/* job information styles */
 
 .interested {
 	grid-column: 1 / 2;
@@ -167,10 +217,102 @@
 	grid-column: 2 / 3;
 }
 
+#jobList > div {
+	line-height: 1.5rem;
+	outline: 0.15rem solid #112d4e;
+	padding: 0.5rem;
+	margin: 0.7rem 1.4rem;
+	border-radius: 7px;
+}
+
+#jobList > div > button {
+	background-color: #194577cb;
+	color: #f9f7f7;
+	transition: 0.3s;
+	border: solid #194577cb 2px;
+	border-radius: 0.3rem;
+	margin-right: 0.5rem;
+	height: 1.8rem;
+	width: 6rem;
+	font-size: 0.9rem;
+	margin-top: 0.3rem;
+}
+
+#jobList > div > button:hover {
+	cursor: pointer;
+	background-color: #dbe2ef;
+	color: #112d4e;
+}
+
+.jobInfo > h2 {
+	font-size: 1.3rem;
+}
+
+.jobInfo > h3 {
+	border-bottom: 0.1rem solid #202020;
+	font-size: 1rem;
+}
+
+.jobInfo > p {
+	font-size: 1.1rem;
+	padding-bottom: 0.5rem;
+}
+
+/* footer styles */
+
 #footer {
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	bottom: 0;
-	width: 100%;
-	height: 2.5rem;
+	padding: 2rem 0rem;
+	background-color: #f9f7f7;
+	margin-top: auto;
+}
+
+#footer > p {
+	text-align: center;
+	color: #202020;
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 1rem;
+	margin-top: 0rem;
+}
+
+/* all icon styles */
+
+#icons {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0rem;
+}
+
+#icons > div {
+	background-color: #112d4e;
+	margin: 0rem 1rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+#icons > div > a {
+	all: unset;
+	display: flex;
+	color: #f9f7f7;
+	font-size: 2rem;
+}
+
+#icons > div:hover {
+	cursor: pointer;
+	background-color: #3f72af;
+}
+
+#icons > div > a:hover {
+	cursor: pointer;
 }

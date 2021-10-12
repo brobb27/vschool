@@ -2,6 +2,7 @@ import React from "react"
 import BountyList from "./components/JobList";
 import Header from './components/Header'
 import Form from './components/Form'
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         </div>
         <BountyList />
       </div>
-      <h1 id='footer'>Footer</h1>
+      <Footer />
     </div>
   );
 }

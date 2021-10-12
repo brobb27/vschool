@@ -67,7 +67,7 @@ function Home() {
 
 export default Home
 
-// Put this in the About Page
+// Put the message below in the About Page
 
 // Are you tired of eating at the same restaurants every week, but don't know where else to go?
 

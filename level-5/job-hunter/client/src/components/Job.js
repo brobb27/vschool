@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState, useContext } from 'react'
 import { ContextInfo } from './contextInfo'
 import Form from './Form'
+import { AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 
 function Job({ info }) {
     // use context for job list
@@ -27,20 +28,24 @@ function Job({ info }) {
                 setJobList(prevList => prevList.filter(savedJob => savedJob._id !== info._id))
                 alert(`You have successfully removed ${info.position} at ${info.company} from your job list.`)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     return (
         <div className={info.applied === true ? 'applied' : 'interested'}>
             {isEditing === false ?
             <>
-                <div>
+                <div className='jobInfo'>
                     <h2>{info.position}</h2>
                     <h3>{info.company}</h3>
                     <p>Estimated Salary: {info.estimatedSalary}</p>
-                    <p>Type: {info.type}</p>
-                    <p>Applied? {info.applied === false ? 'False' : 'Yes'}</p>
-                    <a href={info.postUrl} rel="noopener noreferrer" target='_blank'>Job Posting</a>
+                    <p>Location: {info.type}</p>
+                    {info.applied === false ? 
+                    <p>Application Not Submitted <AiOutlineClose style={{color: 'red', fontSize: '1.4rem', position: 'relative', top: '.25rem', zIndex: '0'}} /></p> 
+                    : 
+                    <p>Applied <AiOutlineCheck style={{color: 'green', fontSize: '1.4rem', position: 'relative', top: '.25rem', zIndex: '0'}} /></p>
+                    }
+                    <p><a href={info.postUrl} rel="noopener noreferrer" target='_blank'>Job Posting Link</a></p>
                 </div>
                 <button onClick={toggleEdit}>Update</button>
                 <button onClick={removeJob}>Remove Job</button>
