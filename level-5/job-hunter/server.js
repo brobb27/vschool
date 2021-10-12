@@ -16,6 +16,12 @@ app.use(cors({
 // Routes
 app.use('/jobs', require('./routes/jobRouter'))
 
+// Error handler -- include a global error handler in all projects
+app.use((err, req, res, next) => {
+    console.log(err)
+    return res.send({errMsg: err.message})
+})
+
 // Server listening
 app.listen(7000, () => {
     console.log('Server is up and running on port 7000')

@@ -54,7 +54,7 @@ function Form(props) {
                 const newJob = res.data
                 setJobList(prevList => [...prevList, newJob])
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
         setJobDetails(initValues)
     }
 
@@ -67,7 +67,7 @@ function Form(props) {
                 const updatedJobDetails = res.data
                 setJobList(prevList => prevList.map(job => job._id !== updatedJobDetails._id ? job : updatedJobDetails))
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
         props.setEdit(prevState => !prevState)
     }
 

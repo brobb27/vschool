@@ -28,7 +28,7 @@ function Job({ info }) {
                 setJobList(prevList => prevList.filter(savedJob => savedJob._id !== info._id))
                 alert(`You have successfully removed ${info.position} at ${info.company} from your job list.`)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response.data.errMsg))
     }
 
     return (

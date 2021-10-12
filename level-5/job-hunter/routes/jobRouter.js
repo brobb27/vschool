@@ -15,21 +15,32 @@ let jobList = [
 // Routes
 // get all
 jobsRouter.get('/', (req, res) => {
+    res.status(200)
     res.send(jobList)
 })
 
 // get one
-jobsRouter.get('/:jobId', (req, res) => {
+jobsRouter.get('/:jobId', (req, res, next) => {
     const jobId = req.params.jobId
     const foundJob = jobList.find(job => job._id === jobId)
-    res.send(foundJob)
+    if(!foundJob) {
+        const error = new Error(`A job with the id of '${jobId}' was not found.`)
+        res.status(500)
+        return next(error)
+    }
+    res.status(200).send(foundJob)
 })
 
 // get by type
-jobsRouter.get('/search/side', (req, res) => {
-    const side = req.query.side
-    const filteredJob = jobList.filter(job => job.type === side)
-    res.send(filteredJob)
+jobsRouter.get('/search/type', (req, res, next) => {
+    const type = req.query.type
+    if(!type) {
+        const error = new Error('Please provide a location type')
+        res.status(500)
+        return next(error)
+    }
+    const filteredJob = jobList.filter(job => job.type === type)
+    res.status(200).send(filteredJob)
 })
 
 // post
@@ -38,7 +49,7 @@ jobsRouter.post('/', (req, res) => {
     newJob._id = uuid()
     jobList.push(newJob)
     res.set('Access-Control-Allow-Origin', '*')
-    res.send(newJob)
+    res.status(201).send(newJob)
 })
 
 // put
@@ -46,7 +57,7 @@ jobsRouter.put('/:jobId', (req, res) => {
     const jobId = req.params.jobId
     const itemEditing = jobList.findIndex(job => job._id === jobId)
     const updatedJob = Object.assign(jobList[itemEditing], req.body)
-    res.send(updatedJob)
+    res.status(201).send(updatedJob)
 })
 
 // delete
