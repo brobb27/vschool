@@ -23,7 +23,7 @@
 }
 
 .scroll {
-	background-color: #16202a;
+	background-color: #2e3141;
 }
 
 #navbarLinks {
@@ -79,7 +79,7 @@
 	justify-content: center;
 	align-items: center;
 	color: #ffffff;
-	min-height: 36rem;
+	min-height: 50rem;
 	font-family: "Raleway", Helvetica, sans-serif;
 	padding: 12rem 0rem 9rem;
 	background-image: url(./images/main-background.jpg);
@@ -207,4 +207,6 @@
 /* projects styles */
 
 #projects {
+	background-color: #2e3141;
+	color: whitesmoke;
 }

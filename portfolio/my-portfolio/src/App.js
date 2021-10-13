@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import AboutMe from './components/AboutMe'
+import Projects from './components/Projects'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <Header />
       <AboutMe />
+      <Projects />
       <h1>Projects</h1>
       <h1>Contact Info/Resume</h1>
       <h1>Footer</h1>
