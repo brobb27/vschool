@@ -11,7 +11,6 @@ function App() {
       <Header />
       <AboutMe />
       <Projects />
-      <h1>Projects</h1>
       <h1>Contact Info/Resume</h1>
       <h1>Footer</h1>
     </div>

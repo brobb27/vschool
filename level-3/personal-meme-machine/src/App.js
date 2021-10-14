@@ -156,7 +156,7 @@ class App extends React.Component {
                     name='topText'
                     className='inputBox'
                     value={this.state.meme.topText}
-                    maxLength='32'
+                    maxLength='31'
                     placeholder='Top Text'
                     onChange={this.handleChange}
                   />
@@ -178,7 +178,7 @@ class App extends React.Component {
                     name='bottomText'
                     className='inputBox'
                     value={this.state.meme.bottomText}
-                    maxLength='32'
+                    maxLength='31'
                     placeholder='Bottom Text'
                     onChange={this.handleChange}
                   />
