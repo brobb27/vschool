@@ -10,9 +10,8 @@ html {
 #header {
 	padding: 8.3rem 0rem;
 	background-image: url(https://startbootstrap.github.io/startbootstrap-clean-blog/assets/img/home-bg.jpg);
-	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	background-blend-mode: color;
 	background-color: #0000007a;
 	text-align: center;

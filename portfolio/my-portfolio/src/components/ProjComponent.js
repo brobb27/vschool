@@ -1,11 +1,16 @@
 import React from "react";
 
-function ProjComponent() {
+function ProjComponent({proj}) {
     return (
-        <div>
-            <p>image</p>
-            <h3>title</h3>
-            <p>description</p>
+        <div className='projComp'>
+            <img src={proj.projectImg} alt='project' />
+            <div>
+                <h3>{proj.title}</h3>
+                <p>{proj.description}</p>
+            </div>
+            <div id='buttonDiv'>
+                <button>Visit Site</button>
+            </div>
         </div>
     )
 }
