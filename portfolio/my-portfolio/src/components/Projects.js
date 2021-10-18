@@ -36,17 +36,17 @@ function Projects() {
         {
             projectImg: sampleBlog,
             title: 'Sample Blog',
-            description: 'This is a simple is a sample landing page for a generic blog. It was built using React props and CSS'
+            description: 'This is a sample landing page for a generic blog. It was built using React props and CSS.'
         },
         {
             projectImg: kentsCamera,
             title: 'Kents Camera Castle',
-            description: 'This fully responsive landing page was built from scratch using HTML, CSS, and Bootstrap. I built it for a digital marketing assignment while finishing my degree.'
+            description: `This fully responsive landing page was built from scratch using HTML, CSS, and Bootstrap. It was built as part of a digital marketing assignment while finishing my bachelor's degree.`
         },
         {
             projectImg: travelList,
             title: 'Travel List',
-            description: 'This app was built from scratch using HTML, CSS, and Javascript to make AJAX/HTTP calls to an API and allows the user to add travel destinations to the webpage.'
+            description: 'This app was built from scratch using HTML, CSS, and Javascript to make AJAX/HTTP calls to an API and allows the user to add, complete, and delete travel destinations to the webpage.'
         }
     ]
 
@@ -58,7 +58,7 @@ function Projects() {
         <div id='projects'>
             <div>
                 <h2>Projects</h2>
-                <p>Short description of what languages were used to develop these projects</p>
+                <p>The projects below were developed using web development tools such as: </p>
             </div>
             <div id='projectContainer'>
                 {projectComponents}
@@ -69,3 +69,5 @@ function Projects() {
 }
 
 export default Projects
+
+// 
