@@ -28,7 +28,7 @@ function Navbar() {
         <div id='navbar' className={scrolled ? 'scroll' : ''}>
             <div id='navbarTitle'>
                 <img src={personalLogo} alt='Personal Logo'/>
-                <a href='header'>Blair Robbins</a>
+                <a href='#header'>Blair Robbins</a>
             </div>
             <div className={isDropped === false ? 'navbarLinks' : 'droppedOptions'}>
                 <div id='dropper' onClick={dropdown}>
