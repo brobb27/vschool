@@ -38,7 +38,7 @@ function Job({ info }) {
                 <div className='jobInfo'>
                     <h2>{info.position}</h2>
                     <h3>{info.company}</h3>
-                    <p>Estimated Salary: {info.estimatedSalary}</p>
+                    <p>Estimated Salary: ${info.estimatedSalary}</p>
                     <p>Location: {info.type}</p>
                     {info.applied === false ? 
                     <p>Application Not Submitted <AiOutlineClose style={{color: 'red', fontSize: '1.4rem', position: 'relative', top: '.25rem', zIndex: '0'}} /></p> 
