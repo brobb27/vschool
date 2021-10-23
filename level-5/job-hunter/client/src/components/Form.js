@@ -90,7 +90,7 @@ function Form(props) {
                     onChange={handleChange}
                 />
                <input 
-                    type='text'
+                    type='number'
                     name='estimatedSalary'
                     placeholder='Estimated Salary'
                     value={estimatedSalary}
