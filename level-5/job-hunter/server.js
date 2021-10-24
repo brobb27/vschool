@@ -5,12 +5,15 @@ const morgan = require('morgan')
 const cors = require('cors')
 const mongoose = require('mongoose')
 
+// port
+const PORT = process.env.PORT || 7000
+
 // Middleware
 app.use(express.json()) // looks for a request body
 app.use(morgan('dev')) // logs requests to the console
 
 // Connect to DB  I am not sure if these are relevant anymore.
-mongoose.connect('mongodb://localhost:27017/job-tracker-db',
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/job-tracker-db',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -35,7 +38,12 @@ app.use((err, req, res, next) => {
     return res.send({errMsg: err.message})
 })
 
+// Pulling client build into express.js
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
+
 // Server listening
-app.listen(7000, () => {
+app.listen(PORT, () => {
     console.log('Server is up and running on port 7000')
 })
