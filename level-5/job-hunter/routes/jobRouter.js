@@ -3,8 +3,6 @@ const express = require('express')
 const jobsRouter = express.Router()
 const Job = require('../models/jobModel.js')
 
-let jobList = []
-
 
 // Routes
 
