@@ -12,9 +12,7 @@ console.log(firstArray)
 
 // 2) Sort an array from largest number to smallest
 
-firstArray.sort(function(a, b) {
-    return b - a
-})
+firstArray.sort((a, b) => b - a)
 
 console.log(firstArray)
 
@@ -44,9 +42,9 @@ const ageArray = [
     { name: "Unlucky Swami", age: 77 }
 ]
 
-ageArray.sort(function(a, b) {
-    return a.age - b.age
-})
+ageArray.sort((a, b) =>  a.name.toUpperCase() > b.name.toUpperCase() ? 1 : 0)
+
+console.log(ageArray)
 
 ageArray.sort((a, b) => a.age - b.age)
 
