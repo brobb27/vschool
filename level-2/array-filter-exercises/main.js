@@ -11,9 +11,11 @@ const fiveOrGreater = firstArray.filter(function(number) {
     }
 })
 
-const e6Five = firstArray.filter(num => num > 5)
+// OR
 
-console.log(e6Five)
+const es6Five = firstArray.filter(num => num > 5)
+
+console.log(es6Five)
 
 
 // 2) Given an array of numbers, return a new array that only includes the even numbers.
@@ -24,9 +26,11 @@ const even = firstArray.filter(function(num) {
     }
 })
 
-const e6Even = firstArray.filter(num => num % 2 === 0)
+// OR
 
-console.log(e6Even)
+const es6Even = firstArray.filter(num => num % 2 === 0)
+
+console.log(es6Even)
 
 
 // 3) Given an array of strings, return a new array that only includes those that are 5 characters or fewer in length
@@ -39,9 +43,11 @@ const lessFive = stringArray.filter(function(word) {
     }
 })
 
-const e6lessFive = stringArray.filter(word => word.length <= 5)
+// OR
 
-console.log(e6lessFive)
+const es6lessFive = stringArray.filter(word => word.length <= 5)
+
+console.log(es6lessFive)
 
 
 // 4) Given an array of people objects, return a new array that has filtered out all those who don't belong to the club.
@@ -60,9 +66,11 @@ const inTheClub = illuminatiPeople.filter(function(person) {
     }
 })
 
-const e6inTheClub = illuminatiPeople.filter(person => person.member === true)
+// OR
 
-console.log(e6inTheClub)
+const es6inTheClub = illuminatiPeople.filter(person => person.member === true)
+
+console.log(es6inTheClub)
 
 
 // 5) Make a filtered list of all the people who are old enough to see The Matrix (older than 18)
@@ -81,6 +89,8 @@ const oldEnough = samePeople.filter(function(person) {
     }
 })
 
-const e6oldEnough = samePeople.filter(person => person.age >= 18)
+// OR
 
-console.log(e6oldEnough)
+const es6oldEnough = samePeople.filter(person => person.age >= 18)
+
+console.log(es6oldEnough)
