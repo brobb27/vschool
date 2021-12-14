@@ -20,7 +20,14 @@ const longString = firstArray.reduce(function(final, num) {
     return final
 }, "")
 
-console.log(longString)
+// OR
+
+const stringOfNum = firstArray.reduce((final, num) => {
+    final = final.concat(num)
+    return final
+}, '')
+
+console.log(stringOfNum)
 
 
 // 3) Turn an array of voter objects into a count of how many people voted
@@ -47,7 +54,16 @@ const didVote = voters.reduce(function(final, voter) {
     return final
 }, 0)
 
-console.log(didVote)
+// OR
+
+const votedBb = voters.reduce((final, person) => {
+    if (person.voted === true) {
+        final++
+    }
+    return final
+}, 0)
+
+console.log(votedBb)
 
 
 // 4) Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once
@@ -60,7 +76,7 @@ const wishlist = [
     { title: "A second Tesla Model S", price: 90000 }
 ]
 
-const totalCost = wishlist.reduce(function(final, item) {
+const totalCost = wishlist.reduce((final, item) => {
     final += item.price
     return final
 }, 0)
@@ -76,7 +92,7 @@ const arrays = [
     [4, 5, 6]
 ]
 
-const combine = arrays.reduce(function(final, array) {
+const combine = arrays.reduce((final, array) => {
     final = final.concat(array)
     return final
 }, [])
@@ -101,19 +117,19 @@ const newVoters = [
     {name: 'Zack', age: 19, voted: false}
 ]
 
-const voterResults = newVoters.reduce(function(final, voter) {
-    if (voter.age >= 18 && voter.age <= 25) {
+const voterResults = newVoters.reduce((final, voter) => {
+    if (voter.age <= 25) {
         final.numOfYoungVoters++
-    } else if (voter.age >= 26 && voter.age <= 35) {
+    } else if (voter.age <= 35) {
         final.numOfMidVoters++
-    } else if (voter.age >= 36 && voter.age <= 55) {
+    } else if (voter.age >= 36) {
         final.numOfOldVoters++
     }
-    if (voter.age >= 18 && voter.age <= 25 && voter.voted === true) {
+    if (voter.age <= 25 && voter.voted === true) {
         final.numOfYoungVotes++
-    } else if (voter.age >= 26 && voter.age <= 35 && voter.voted === true){
+    } else if (voter.age <= 35 && voter.voted === true){
         final.numOfMidVotes++
-    } else if (voter.age >= 36 && voter.age <= 55 && voter.voted === true) {
+    } else if (voter.age >= 36 && voter.voted === true) {
         final.numOfOldVotes++
     }
     return final
