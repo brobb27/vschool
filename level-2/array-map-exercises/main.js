@@ -34,18 +34,21 @@ console.log(newToString)
 const secondString = ["john", "JACOB", "jinGleHeimer", "schmidt"]
 
 const capThem = secondString.map(function(name) {
-    const firstLetter = name.slice(0, 1)
-    const restOfWord = name.slice(1, )
+    const firstLetter = name.slice(0, 1).toUpperCase()
+    const restOfWord = name.slice(1, ).toLowerCase()
 
-    const capital = firstLetter.toUpperCase()
-    const lowerCase = restOfWord.toLowerCase()
-
-    return capital.concat(lowerCase);
+    return firstLetter.concat(restOfWord);
 })
 
-// E6 would just be name => 
+// E6 would just be name =>
 
-console.log(capThem)
+const capEm = secondString.map(name => {
+    const capitalized = name.slice(0, 1).toUpperCase() + name.slice(1, ).toLowerCase()
+
+    return capitalized
+})
+
+console.log(capEm)
 
 
 // 4) Make an array of strings of the names
@@ -77,9 +80,11 @@ const theNames = namesOnly.map(function(person) {
     return person.name
 })
 
-// OR const theNames = namesOnly.map(person => return person.name)
+// OR ES6
 
-console.log(theNames)
+const onlyNames = namesOnly.map(person => person.name)
+
+console.log(onlyNames)
 
 
 // 5) Make an array of strings of the names saying whether or not they can go to The Matrix
@@ -93,7 +98,15 @@ const oldEnough = namesOnly.map(person => {
     }
 })
 
-console.log(oldEnough)
+// OR ES6
+
+const rRated = namesOnly.map(person => person.age >= 18 ? 
+    `${person.name} can go to the Matrix.`
+    :
+    `${person.name} is too young to see the Matrix.`
+)
+
+console.log(rRated)
 
 
 // 6) Make an array of the names in h1s, and the ages in h2s
