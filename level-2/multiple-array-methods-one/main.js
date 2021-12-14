@@ -40,7 +40,7 @@ const people = [
 
 // This filters the array in alphabetical order from a to b
 
-const lastName = people.sort(function(personA, personB) {
+const lastName = people.sort((personA, personB) => {
     let a = personA.lastName.toLowerCase();
     let b = personB.lastName.toLowerCase();
 
@@ -59,8 +59,8 @@ const byAge = lastName.filter(person => person.age > 18)
 
 // This gets the array ready to be inserted into html
 
-const ready = byAge.map(function(person) {
-    return `<li>${person.firstName} ${person.lastName} is ${person.age} </li>`
-})
+const ready = byAge.map(person =>
+    `<li>${person.firstName} ${person.lastName} is ${person.age} </li>`
+)
 
 console.log(ready)
