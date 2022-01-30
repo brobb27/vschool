@@ -10,7 +10,16 @@ const total = firstArray.reduce(function(final, num) {
     return final
 }, 0)
 
-console.log(total)
+// console.log(total)
+
+// refactored
+
+const newTotal = firstArray.reduce((final, num) => {
+    final += num
+    return final
+}, 0)
+
+// console.log(newTotal)
 
 
 // 2) Turn an array of numbers into a long string of all those numbers.
@@ -27,7 +36,7 @@ const stringOfNum = firstArray.reduce((final, num) => {
     return final
 }, '')
 
-console.log(stringOfNum)
+// console.log(stringOfNum)
 
 
 // 3) Turn an array of voter objects into a count of how many people voted
@@ -63,7 +72,7 @@ const votedBb = voters.reduce((final, person) => {
     return final
 }, 0)
 
-console.log(votedBb)
+// console.log(votedBb)
 
 
 // 4) Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once
@@ -81,7 +90,7 @@ const totalCost = wishlist.reduce((final, item) => {
     return final
 }, 0)
 
-console.log(totalCost)
+// console.log(totalCost)
 
 
 // 5) Given an array of arrays, flatten them into a single array
@@ -97,7 +106,7 @@ const combine = arrays.reduce((final, array) => {
     return final
 }, [])
 
-console.log(combine)
+// console.log(combine)
 
 
 // 6) Given an array of potential voters, return an object representing the results of the vote
@@ -135,4 +144,21 @@ const voterResults = newVoters.reduce((final, voter) => {
     return final
 }, {numOfYoungVoters: 0, numOfYoungVotes: 0, numOfMidVoters: 0, numOfMidVotes: 0, numOfOldVoters: 0, numOfOldVotes: 0})
 
-console.log(voterResults)
+// console.log(voterResults)
+
+
+// No Dupes, given an array return an array that has no duplicates
+
+const noDupeArray = ['a', 'a', 'b', 'c', 2, 2, 5, 5, 'b', 5]
+
+const noDupes = noDupeArray.reduce((final, current) => {
+    if (final.length === 0) {
+        final.push(current)
+    } else {
+        const isOld = final.some(value => value === current)
+        isOld === false && final.push(current)
+    }
+    return final
+}, [])
+
+console.log(noDupes)
