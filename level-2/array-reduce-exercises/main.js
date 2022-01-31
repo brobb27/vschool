@@ -162,3 +162,9 @@ const noDupes = noDupeArray.reduce((final, current) => {
 }, [])
 
 console.log(noDupes)
+
+// SQL syntax example
+
+// SELECT ID FROM COMPANY
+// WHERE employees > 10000
+// ORDER BY ID;
