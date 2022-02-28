@@ -42,7 +42,7 @@ const ageArray = [
     { name: "Unlucky Swami", age: 77 }
 ]
 
-ageArray.sort((a, b) =>  a.name.toUpperCase() > b.name.toUpperCase() ? 1 : 0)
+ageArray.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
 
 console.log(ageArray)
 
