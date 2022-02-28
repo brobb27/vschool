@@ -53,9 +53,15 @@ const lastName = people.sort((personA, personB) => {
     return 0;
 })
 
+// OR
+
+const filterByLast = people.sort((personA, personB) => {
+    return personA.lastName.toLowerCase - personB.lastName.toLowerCase
+})
+
 // This filters the array by age
 
-const byAge = lastName.filter(person => person.age > 18)
+const byAge = filterByLast.filter(person => person.age > 18)
 
 // This gets the array ready to be inserted into html
 
