@@ -53,7 +53,7 @@ console.log(capEm)
 
 // 4) Make an array of strings of the names
 
-const namesOnly = [
+const people = [
     {
         name: "Angelina Jolie",
         age: 80
@@ -76,20 +76,20 @@ const namesOnly = [
     }
 ]
 
-const theNames = namesOnly.map(function(person) {
+const theNames = people.map(function(person) {
     return person.name
 })
 
 // OR ES6
 
-const onlyNames = namesOnly.map(person => person.name)
+const onlyNames = people.map(person => person.name)
 
 console.log(onlyNames)
 
 
 // 5) Make an array of strings of the names saying whether or not they can go to The Matrix
 
-const oldEnough = namesOnly.map(person => {
+const oldEnough = people.map(person => {
     if (person.age >= 18) {
         return `${person.name} can go to the Matrix`
     }
@@ -100,7 +100,7 @@ const oldEnough = namesOnly.map(person => {
 
 // OR ES6
 
-const rRated = namesOnly.map(person => person.age >= 18 ? 
+const rRated = people.map(person => person.age >= 18 ? 
     `${person.name} can go to the Matrix.`
     :
     `${person.name} is too young to see the Matrix.`
@@ -111,9 +111,7 @@ console.log(rRated)
 
 // 6) Make an array of the names in h1s, and the ages in h2s
 
-const readyToImport = namesOnly.map(person => {
-    return `<h1>${person.name}</h1><h2>${person.age}</h2>`
-})
+const readyToImport = people.map(person => `<h1>${person.name}</h1><h2>${person.age}</h2>`)
 
 console.log(readyToImport)
 
